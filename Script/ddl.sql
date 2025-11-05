@@ -60,15 +60,15 @@ CREATE TABLE IF NOT EXISTS tareas (
     FOREIGN KEY (creado_por) REFERENCES usuarios(id) ON DELETE SET NULL
 ) ENGINE=InnoDB;
 
--- Tabla intermedia: asignaciones de tarea a usuario (una tarea puede tener varias personas)
-CREATE TABLE IF NOT EXISTS tarea_asignaciones (
-    tarea_id BIGINT NOT NULL,
-    usuario_id BIGINT NOT NULL,
-    asignado_desde TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (tarea_id, usuario_id),
-    FOREIGN KEY (tarea_id) REFERENCES tareas(id) ON DELETE CASCADE,
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
-) ENGINE=InnoDB;
+-- -- Tabla intermedia: asignaciones de tarea a usuario (una tarea puede tener varias personas)
+-- CREATE TABLE IF NOT EXISTS tarea_asignaciones (
+--     tarea_id BIGINT NOT NULL,
+--     usuario_id BIGINT NOT NULL,
+--     asignado_desde TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--     PRIMARY KEY (tarea_id, usuario_id),
+--     FOREIGN KEY (tarea_id) REFERENCES tareas(id) ON DELETE CASCADE,
+--     FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+-- ) ENGINE=InnoDB;
 
 -- Índices para búsquedas rápidas
 CREATE INDEX idx_tareas_tablero ON tareas(tablero_id);
