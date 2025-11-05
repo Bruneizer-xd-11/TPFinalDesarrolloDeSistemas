@@ -12,6 +12,8 @@ CREATE TABLE IF NOT EXISTS usuarios (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(150) NOT NULL,
     email VARCHAR(255) UNIQUE,
+    username VARCHAR(100) UNIQUE AFTER email,
+    password_hash VARCHAR(255) NOT NULL AFTER username,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
@@ -89,6 +91,9 @@ INSERT INTO columnas (tablero_id, nombre, posicion) VALUES
 
 -- Procedimientos almacenados útiles (simplificados)
 -- IMPORTANTE: ajustes finales (validaciones, control de errores) pueden añadirse según necesidad.
+
+
+--Stored PROCEDURE
 
 DELIMITER $$
 
