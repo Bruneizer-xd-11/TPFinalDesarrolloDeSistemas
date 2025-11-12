@@ -1,0 +1,13 @@
+E:\Brenda\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\DapperData\bin\Debug\net9.0\DapperData.deps.json
+E:\Brenda\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\DapperData\bin\Debug\net9.0\DapperData.dll
+E:\Brenda\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\DapperData\bin\Debug\net9.0\DapperData.pdb
+E:\Brenda\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\DapperData\obj\Debug\net9.0\DapperData.csproj.AssemblyReference.cache
+E:\Brenda\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\DapperData\obj\Debug\net9.0\DapperData.GeneratedMSBuildEditorConfig.editorconfig
+E:\Brenda\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\DapperData\obj\Debug\net9.0\DapperData.AssemblyInfoInputs.cache
+E:\Brenda\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\DapperData\obj\Debug\net9.0\DapperData.AssemblyInfo.cs
+E:\Brenda\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\DapperData\obj\Debug\net9.0\DapperData.csproj.CoreCompileInputs.cache
+E:\Brenda\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\DapperData\obj\Debug\net9.0\DapperData.sourcelink.json
+E:\Brenda\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\DapperData\obj\Debug\net9.0\DapperData.dll
+E:\Brenda\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\DapperData\obj\Debug\net9.0\refint\DapperData.dll
+E:\Brenda\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\DapperData\obj\Debug\net9.0\DapperData.pdb
+E:\Brenda\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\DapperData\obj\Debug\net9.0\ref\DapperData.dll
