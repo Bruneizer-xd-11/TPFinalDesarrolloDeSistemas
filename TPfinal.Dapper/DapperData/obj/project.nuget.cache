@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "A8qv5gBe2MI=",
+  "dgSpecHash": "ICsxlOMAl1Q=",
   "success": true,
-  "projectFilePath": "E:\\Brenda\\TPFinalDesarrolloDeSistemas\\TPfinal.Dapper\\DapperData\\DapperData.csproj",
+  "projectFilePath": "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\TPFinalDesarrolloDeSistemas\\TPfinal.Dapper\\DapperData\\DapperData.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lab15-PC01\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
     "C:\\Users\\Lab15-PC01\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.0\\microsoft.extensions.configuration.9.0.0.nupkg.sha512",

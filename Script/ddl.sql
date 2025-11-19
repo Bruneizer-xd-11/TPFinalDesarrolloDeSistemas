@@ -23,9 +23,12 @@ CREATE TABLE IF NOT EXISTS tableros (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(150) NOT NULL,
     descripcion TEXT NULL,
+    propietario_id BIGINT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (propietario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
+
 
 -- Tabla: columnas (cada tablero puede definir sus columnas; mínimo: backlog, in progress, done)
 CREATE TABLE IF NOT EXISTS columnas (
@@ -61,6 +64,16 @@ CREATE TABLE IF NOT EXISTS tareas (
     FOREIGN KEY (columna_id) REFERENCES columnas(id) ON DELETE CASCADE,
     FOREIGN KEY (creado_por) REFERENCES usuarios(id) ON DELETE SET NULL
 ) ENGINE=InnoDB;
+
+
+CREATE TABLE tablero_compartido (
+    tablero_id BIGINT NOT NULL,
+    usuario_id BIGINT NOT NULL,
+    PRIMARY KEY (tablero_id, usuario_id),
+    FOREIGN KEY (tablero_id) REFERENCES tableros(id) ON DELETE CASCADE,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
+
 
 -- -- Tabla intermedia: asignaciones de tarea a usuario (una tarea puede tener varias personas)
 -- CREATE TABLE IF NOT EXISTS tarea_asignaciones (
