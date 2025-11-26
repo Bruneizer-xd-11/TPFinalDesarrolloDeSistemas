@@ -20,3 +20,12 @@ C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\
 C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\DapperData\obj\Debug\net9.0\DapperData.dll
 C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\DapperData\obj\Debug\net9.0\refint\DapperData.dll
 C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\TPfinal.Dapper\DapperData\obj\Debug\net9.0\DapperData.pdb
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net9.0\DapperData.csproj.AssemblyReference.cache
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net9.0\DapperData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net9.0\DapperData.AssemblyInfoInputs.cache
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net9.0\DapperData.AssemblyInfo.cs
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net9.0\DapperData.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net9.0\DapperData.sourcelink.json
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net9.0\DapperData.dll
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net9.0\refint\DapperData.dll
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net9.0\DapperData.pdb

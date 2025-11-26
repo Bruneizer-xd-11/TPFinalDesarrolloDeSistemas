@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "+aBwiZe/27I=",
+  "dgSpecHash": "0Zyx12j3yRY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lab15-PC01\\Documents\\GitHub\\TPFinalDesarrolloDeSistemas\\Api\\Api.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\Documents\\GitHub\\TPFinalDesarrolloDeSistemas\\Api\\Api.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Lab15-PC01\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.8\\microsoft.aspnetcore.openapi.9.0.8.nupkg.sha512",
-    "C:\\Users\\Lab15-PC01\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.8\\microsoft.aspnetcore.openapi.9.0.8.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
   ],
   "logs": []
 }
