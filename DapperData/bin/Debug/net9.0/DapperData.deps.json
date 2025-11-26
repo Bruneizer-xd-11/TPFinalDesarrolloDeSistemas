@@ -12,6 +12,7 @@
           "Microsoft.Extensions.Configuration": "9.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.0",
           "Microsoft.Extensions.Configuration.Binder": "9.0.0",
+          "Models": "1.0.0",
           "MySqlConnector": "2.3.7"
         },
         "runtime": {
@@ -86,6 +87,14 @@
             "fileVersion": "2.3.7.0"
           }
         }
+      },
+      "Models/1.0.0": {
+        "runtime": {
+          "Models.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -143,6 +152,11 @@
       "sha512": "sha512-YiVOxvJ+vAYW8NT9gHv8RxKCDFCSXAObF3z0Ou/8WRv8Lsn2QsxaPW5xEwPE+xCcAq6BGkrI8GTOC09Xg09blQ==",
       "path": "mysqlconnector/2.3.7",
       "hashPath": "mysqlconnector.2.3.7.nupkg.sha512"
+    },
+    "Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

@@ -1,5 +1,6 @@
 using Dapper;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
+
 using Models;
 
 namespace Persistencia;
