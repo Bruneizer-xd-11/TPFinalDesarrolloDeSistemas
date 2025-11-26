@@ -135,4 +135,14 @@ public class DaoDappers : IDao
             commandType: System.Data.CommandType.StoredProcedure
         );
     }
+
+
+    //test
+    public async Task<MySqlConnection> ProbarConexion()
+{
+    var conn = GetConnection();
+    await conn.OpenAsync();
+    return conn;
+}
+
 }
