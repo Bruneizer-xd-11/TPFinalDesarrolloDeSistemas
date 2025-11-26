@@ -1,0 +1,6 @@
+@TPFinalAPI_HostAddress = http://localhost:5114
+
+GET {{TPFinalAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

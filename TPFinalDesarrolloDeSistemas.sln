@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperData", "DapperData\DapperData.csproj", "{5B58CEAD-19F0-44E1-8A05-677EFE292FE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPFinalAPI", "TPFinalAPI\TPFinalAPI.csproj", "{B2C5CBA2-8481-4D19-B803-5689B05E26BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{5B58CEAD-19F0-44E1-8A05-677EFE292FE3}.Release|x64.Build.0 = Release|Any CPU
 		{5B58CEAD-19F0-44E1-8A05-677EFE292FE3}.Release|x86.ActiveCfg = Release|Any CPU
 		{5B58CEAD-19F0-44E1-8A05-677EFE292FE3}.Release|x86.Build.0 = Release|Any CPU
+		{B2C5CBA2-8481-4D19-B803-5689B05E26BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C5CBA2-8481-4D19-B803-5689B05E26BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C5CBA2-8481-4D19-B803-5689B05E26BF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B2C5CBA2-8481-4D19-B803-5689B05E26BF}.Debug|x64.Build.0 = Debug|Any CPU
+		{B2C5CBA2-8481-4D19-B803-5689B05E26BF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B2C5CBA2-8481-4D19-B803-5689B05E26BF}.Debug|x86.Build.0 = Debug|Any CPU
+		{B2C5CBA2-8481-4D19-B803-5689B05E26BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C5CBA2-8481-4D19-B803-5689B05E26BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C5CBA2-8481-4D19-B803-5689B05E26BF}.Release|x64.ActiveCfg = Release|Any CPU
+		{B2C5CBA2-8481-4D19-B803-5689B05E26BF}.Release|x64.Build.0 = Release|Any CPU
+		{B2C5CBA2-8481-4D19-B803-5689B05E26BF}.Release|x86.ActiveCfg = Release|Any CPU
+		{B2C5CBA2-8481-4D19-B803-5689B05E26BF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
