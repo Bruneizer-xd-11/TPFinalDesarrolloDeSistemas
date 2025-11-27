@@ -1,8 +1,0 @@
-C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net9.0\TPFinalAPI.csproj.AssemblyReference.cache
-C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net9.0\TPFinalAPI.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net9.0\TPFinalAPI.AssemblyInfoInputs.cache
-C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net9.0\TPFinalAPI.AssemblyInfo.cs
-C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net9.0\TPFinalAPI.csproj.CoreCompileInputs.cache
-C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net9.0\TPFinalAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net9.0\TPFinalAPI.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net9.0\TPFinalAPI.sourcelink.json

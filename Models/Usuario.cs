@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-namespace Models;
+namespace TPFinalAPI.Models;
 
 public class Usuario
 {

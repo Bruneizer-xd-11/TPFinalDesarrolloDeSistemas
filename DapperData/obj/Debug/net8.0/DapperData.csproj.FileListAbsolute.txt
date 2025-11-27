@@ -1,0 +1,16 @@
+/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/bin/Debug/net8.0/DapperData.deps.json
+/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/bin/Debug/net8.0/DapperData.dll
+/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/bin/Debug/net8.0/DapperData.pdb
+/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/obj/Debug/net8.0/DapperData.csproj.AssemblyReference.cache
+/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/obj/Debug/net8.0/DapperData.GeneratedMSBuildEditorConfig.editorconfig
+/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/obj/Debug/net8.0/DapperData.AssemblyInfoInputs.cache
+/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/obj/Debug/net8.0/DapperData.AssemblyInfo.cs
+/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/obj/Debug/net8.0/DapperData.csproj.CoreCompileInputs.cache
+/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/obj/Debug/net8.0/DapperData.sourcelink.json
+/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/obj/Debug/net8.0/DapperData.csproj.CopyComplete
+/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/obj/Debug/net8.0/DapperData.dll
+/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/obj/Debug/net8.0/refint/DapperData.dll
+/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/obj/Debug/net8.0/DapperData.pdb
+/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/obj/Debug/net8.0/ref/DapperData.dll
+/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/bin/Debug/net8.0/TPFinalAPI.Models.dll
+/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/bin/Debug/net8.0/TPFinalAPI.Models.pdb

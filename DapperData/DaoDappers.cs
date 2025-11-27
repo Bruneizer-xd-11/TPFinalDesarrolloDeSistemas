@@ -1,7 +1,7 @@
 using Dapper;
 using MySqlConnector;
 
-using Models;
+using TPFinalAPI.Models;
 
 namespace Persistencia;
 

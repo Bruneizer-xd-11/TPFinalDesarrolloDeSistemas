@@ -1,19 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
+    <PackageReference Include="Microsoft.OpenApi" Version="2.3.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DapperData\DapperData.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
+  </ItemGroup>
+
+  <!-- ★★★ ESTO ES LO QUE MATA EL ERROR CS0234 PARA SIEMPRE ★★★ -->
+  <ItemGroup>
+    <Using Remove="Models" />
   </ItemGroup>
 
 </Project>
