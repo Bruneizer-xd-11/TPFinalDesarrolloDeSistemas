@@ -10,3 +10,15 @@
 /home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/Models/obj/Debug/net8.0/refint/TPFinalAPI.Models.dll
 /home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/Models/obj/Debug/net8.0/TPFinalAPI.Models.pdb
 /home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/Models/obj/Debug/net8.0/ref/TPFinalAPI.Models.dll
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\Models\bin\Debug\net8.0\TPFinalAPI.Models.deps.json
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\Models\bin\Debug\net8.0\TPFinalAPI.Models.dll
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\Models\bin\Debug\net8.0\TPFinalAPI.Models.pdb
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\Models\obj\Debug\net8.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\Models\obj\Debug\net8.0\Models.AssemblyInfoInputs.cache
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\Models\obj\Debug\net8.0\Models.AssemblyInfo.cs
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\Models\obj\Debug\net8.0\Models.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\Models\obj\Debug\net8.0\Models.sourcelink.json
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\Models\obj\Debug\net8.0\TPFinalAPI.Models.dll
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\Models\obj\Debug\net8.0\refint\TPFinalAPI.Models.dll
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\Models\obj\Debug\net8.0\TPFinalAPI.Models.pdb
+C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\Models\obj\Debug\net8.0\ref\TPFinalAPI.Models.dll

@@ -1,6 +1,5 @@
 using Dapper;
 using MySqlConnector;
-
 using TPFinalAPI.Models;
 
 namespace Persistencia;
@@ -15,7 +14,6 @@ public class DaoDappers : IDao
     }
 
     private MySqlConnection GetConnection() => new MySqlConnection(_connectionString);
-
 
     // =====================  TAREAS  ===================== //
 
@@ -46,7 +44,7 @@ public class DaoDappers : IDao
                 p_columna_id = tarea.ColumnaId,
                 p_titulo = tarea.Titulo,
                 p_descripcion = tarea.Descripcion,
-                p_prioridad = tarea.Prioridad,
+                p_prioridad = tarea.Prioridad.ToString(),
                 p_tiempo_estimado_min = tarea.TiempoEstimadoMin,
                 p_fecha_inicio = tarea.FechaInicio,
                 p_fecha_fin = tarea.FechaFin,
@@ -69,7 +67,7 @@ public class DaoDappers : IDao
                 p_columna_id = tarea.ColumnaId,
                 p_titulo = tarea.Titulo,
                 p_descripcion = tarea.Descripcion,
-                p_prioridad = tarea.Prioridad,
+                p_prioridad = tarea.Prioridad.ToString(),
                 p_tiempo_estimado_min = tarea.TiempoEstimadoMin,
                 p_fecha_inicio = tarea.FechaInicio,
                 p_fecha_fin = tarea.FechaFin,
@@ -94,6 +92,37 @@ public class DaoDappers : IDao
         return result > 0;
     }
 
+    // ===================== NUEVOS MÉTODOS REQUERIDOS ===================== //
+
+    public async Task<List<Tarea>> ObtenerTareasDeUsuario(long usuarioId)
+    {
+        using var db = GetConnection();
+        return (await db.QueryAsync<Tarea>(
+            "sp_get_tareas_de_usuario",
+            new { p_usuario_id = usuarioId },
+            commandType: System.Data.CommandType.StoredProcedure
+        )).AsList();
+    }
+
+    public async Task<Usuario?> ObtenerUsuarioPorId(long id)
+    {
+        using var db = GetConnection();
+        return await db.QueryFirstOrDefaultAsync<Usuario>(
+            "sp_get_usuario_por_id",
+            new { p_id = id },
+            commandType: System.Data.CommandType.StoredProcedure
+        );
+    }
+
+    public async Task<Usuario?> ObtenerUsuarioPorUsername(string username)
+    {
+        using var db = GetConnection();
+        return await db.QueryFirstOrDefaultAsync<Usuario>(
+            "sp_get_usuario_por_username",
+            new { p_username = username },
+            commandType: System.Data.CommandType.StoredProcedure
+        );
+    }
 
     // ===================== USUARIOS ===================== //
 
@@ -112,7 +141,6 @@ public class DaoDappers : IDao
             commandType: System.Data.CommandType.StoredProcedure
         );
     }
-
 
     // ===================== FILTROS ===================== //
 
@@ -136,13 +164,12 @@ public class DaoDappers : IDao
         );
     }
 
+    // ===================== TEST ===================== //
 
-    //test
     public async Task<MySqlConnection> ProbarConexion()
-{
-    var conn = GetConnection();
-    await conn.OpenAsync();
-    return conn;
-}
-
+    {
+        var conn = GetConnection();
+        await conn.OpenAsync();
+        return conn;
+    }
 }

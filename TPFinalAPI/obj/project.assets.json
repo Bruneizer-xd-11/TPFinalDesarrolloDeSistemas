@@ -787,19 +787,19 @@
     ]
   },
   "packageFolders": {
-    "/home/et12alumno/.nuget/packages/": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/TPFinalAPI/TPFinalAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Documents\\GitHub\\TPFinalDesarrolloDeSistemas\\TPFinalAPI\\TPFinalAPI.csproj",
       "projectName": "TPFinalAPI",
-      "projectPath": "/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/TPFinalAPI/TPFinalAPI.csproj",
-      "packagesPath": "/home/et12alumno/.nuget/packages/",
-      "outputPath": "/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/TPFinalAPI/obj/",
+      "projectPath": "C:\\Users\\Usuario\\Documents\\GitHub\\TPFinalDesarrolloDeSistemas\\TPFinalAPI\\TPFinalAPI.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Usuario\\Documents\\GitHub\\TPFinalDesarrolloDeSistemas\\TPFinalAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/et12alumno/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -811,11 +811,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/DapperData.csproj": {
-              "projectPath": "/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/DapperData/DapperData.csproj"
+            "C:\\Users\\Usuario\\Documents\\GitHub\\TPFinalDesarrolloDeSistemas\\DapperData\\DapperData.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\Documents\\GitHub\\TPFinalDesarrolloDeSistemas\\DapperData\\DapperData.csproj"
             },
-            "/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/Models/Models.csproj": {
-              "projectPath": "/home/et12alumno/Documentos/GitHub/TPFinalDesarrolloDeSistemas/Models/Models.csproj"
+            "C:\\Users\\Usuario\\Documents\\GitHub\\TPFinalDesarrolloDeSistemas\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\Documents\\GitHub\\TPFinalDesarrolloDeSistemas\\Models\\Models.csproj"
             }
           }
         }
@@ -824,7 +824,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -854,6 +860,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.15, 8.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.15, 8.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.15, 8.0.15]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.15, 8.0.15]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -862,7 +886,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
