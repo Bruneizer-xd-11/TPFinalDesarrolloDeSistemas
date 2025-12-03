@@ -1,70 +1,185 @@
-# Getting Started with Create React App
+# 🗂️ Sistema de Gestión de Tareas – TP Final Desarrollo de Sistemas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicación web para la gestión de tareas tipo Kanban, desarrollada utilizando ASP.NET Core MVC, Minimal API, Dapper y SQL Server.
 
-## Available Scripts
+## 📌 Descripción
 
-In the project directory, you can run:
+Este sistema permite administrar tableros, columnas y tareas mediante una interfaz Web MVC y una API REST integrada.
+Incluye soporte para drag & drop, CRUD completo y una capa de persistencia basada en Dapper.
 
-### `npm start`
+## ✨ Características
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🏠 Tableros y Columnas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Visualización de tableros con sus columnas correspondientes.
 
-### `npm test`
+Estructura estilo Kanban.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Organización clara y adaptable.
 
-### `npm run build`
+## 📝 Gestión de Tareas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Crear nuevas tareas dentro de una columna.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Editar título, descripción, tipo, prioridad y tiempo estimado.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Eliminar tareas con confirmación.
 
-### `npm run eject`
+Ver detalles completos.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Timestamps automáticos: CreatedAt y UpdatedAt.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🔀 Drag & Drop
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Mover tareas entre columnas con actualización automática.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Integración directa con un endpoint REST.
 
-## Learn More
+## 🔌 API REST Integrada
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Endpoints CRUD para tareas.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Endpoint especial para mover tareas.
 
-### Code Splitting
+Documentación con Swagger.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🛠️ Persistencia Dapper
 
-### Analyzing the Bundle Size
+Consultas SQL eficientes y optimizadas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+DAO separado en la capa DapperData.
 
-### Making a Progressive Web App
+## 🛠️ Tecnologías Utilizadas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Backend: ASP.NET Core 8.0 MVC + Minimal API
 
-### Advanced Configuration
+Persistencia: Dapper (capa independiente en /DapperData)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Frontend: Razor, Bootstrap 5, JavaScript
 
-### Deployment
+Base de Datos: SQL Server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Arquitectura: MVC + DAO
 
-### `npm run build` fails to minify
+Testing: xUnit en /DapperData.Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Documentación de API: Swagger
+
+## 📁 Estructura del Proyecto
+TPFINALDESARROLLODESISTEMAS/
+├── DapperData/             # Capa de acceso a datos (DAO, consultas Dapper)
+├── DapperData.Tests/       # Pruebas unitarias de la capa de persistencia
+├── MVC/                    # Aplicación web MVC (Controladores, Vistas, wwwroot)
+├── Script/                 # Scripts SQL para generar la base de datos
+├── TPFinalAPI/             # API REST (Minimal APIs, DTOs)
+└── TPFinalDesarrolloDeSistemas.sln
+
+## ⚙️ Configuración
+
+## 1️⃣ Base de Datos
+
+Ejecución de scripts en el orden recomendado:
+
+Script/
+├── ddl.sql
+├── install.sql
+└── storedProcedure.sql
+
+## 2️⃣ Cadena de Conexión
+
+En appsettings.json (MVC o API):
+
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=TareasDB;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+}
+
+## 3️⃣ Ejecutar la Aplicación
+🖥️ Aplicación MVC
+cd MVC
+dotnet restore
+dotnet build
+dotnet run
+
+## 🌐 API
+cd TPFinalAPI
+dotnet restore
+dotnet build
+dotnet run
+
+## 🧩 Detalles Técnicos
+Controladores (MVC)
+
+TablerosController
+
+ColumnasController
+
+TareasController
+
+HomeController (landing)
+
+Capa Dapper (/DapperData)
+
+Interfaz IDao
+
+Implementación DaoDappers
+
+Métodos:
+
+ObtenerTareas()
+
+ObtenerTareaPorId()
+
+CrearTarea()
+
+ActualizarTarea()
+
+EliminarTarea()
+
+MoverTarea()
+
+Vistas (MVC)
+
+Diseño con Bootstrap 5
+
+Listas Kanban
+
+Formularios de validación
+
+Modales de confirmación
+
+## 🚀 Próximas Mejoras
+
+Sistema de login y roles
+
+Notificaciones en tiempo real
+
+Panel de estadísticas
+
+API más completa (tableros / columnas)
+
+Exportación de datos
+
+## 🤝 Contribución
+
+Crear rama:
+
+git checkout -b feature/NuevaFuncionalidad
+
+
+Commit:
+
+git commit -m "Agrega nueva funcionalidad"
+
+
+Push:
+
+git push origin feature/NuevaFuncionalidad
+
+
+Abrir Pull Request
+
+## 📜 Licencia
+
+Proyecto bajo licencia MIT.
