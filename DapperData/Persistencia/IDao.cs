@@ -1,6 +1,9 @@
-// Archivo: DapperData/Persistencia/IDao.cs
-using MySqlConnector;                    // ← ESTA LÍNEA ES LA QUE FALTABA
-using TPFinalAPI.Models;
+using System;
+using System.Threading.Tasks;
+using Dapper;
+using MySqlConnector;
+using DapperData.Models;
+
 
 namespace Persistencia;
 

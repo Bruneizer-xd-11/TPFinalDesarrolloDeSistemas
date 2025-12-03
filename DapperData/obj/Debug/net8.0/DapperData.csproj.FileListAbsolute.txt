@@ -30,3 +30,16 @@ C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Deb
 C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\refint\DapperData.dll
 C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.pdb
 C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\ref\DapperData.dll
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\DapperData\bin\Debug\net8.0\DapperData.deps.json
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\DapperData\bin\Debug\net8.0\DapperData.dll
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\DapperData\bin\Debug\net8.0\DapperData.pdb
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.csproj.AssemblyReference.cache
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.AssemblyInfoInputs.cache
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.AssemblyInfo.cs
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.csproj.CoreCompileInputs.cache
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.sourcelink.json
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.dll
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\refint\DapperData.dll
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.pdb
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\ref\DapperData.dll

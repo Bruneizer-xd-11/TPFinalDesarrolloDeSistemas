@@ -129,5 +129,34 @@ BEGIN
         SELECT LAST_INSERT_ID() AS nuevo_usuario_id;
     END IF;
 END$$
+-- 8) Obtener tareas de un usuario (GET /usuarios/{id}/tareas)
+CREATE PROCEDURE sp_get_tareas_de_usuario(IN p_usuario_id BIGINT)
+BEGIN
+    SELECT t.*, c.nombre AS columna_nombre, b.nombre AS tablero_nombre
+    FROM tareas t
+    LEFT JOIN columnas c ON t.columna_id=c.id
+    LEFT JOIN tableros b ON t.tablero_id=b.id
+    WHERE t.creado_por = p_usuario_id
+    ORDER BY t.created_at DESC;
+END$$
+
+-- 9) Obtener usuario por id
+CREATE PROCEDURE sp_get_usuario_por_id(IN p_id BIGINT)
+BEGIN
+    SELECT u.* FROM usuarios u WHERE u.id = p_id LIMIT 1;
+END$$
+
+-- 10) Obtener usuario por username
+CREATE PROCEDURE sp_get_usuario_por_username(IN p_username VARCHAR(100))
+BEGIN
+    SELECT u.* FROM usuarios u WHERE u.username = p_username LIMIT 1;
+END$$
+
+-- 11) Mover tarea a otra columna (actualiza columna_id)
+CREATE PROCEDURE sp_mover_tarea_columna(IN p_tarea_id BIGINT, IN p_nueva_columna_id BIGINT)
+BEGIN
+    UPDATE tareas SET columna_id = p_nueva_columna_id, updated_at = CURRENT_TIMESTAMP WHERE id = p_tarea_id;
+    SELECT ROW_COUNT() AS filas_actualizadas;
+END$$
 
 DELIMITER ;

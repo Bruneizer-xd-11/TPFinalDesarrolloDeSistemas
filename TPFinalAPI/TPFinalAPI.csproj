@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DapperData\DapperData.csproj" />
-    <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
 
   <!-- ★★★ ESTO ES LO QUE MATA EL ERROR CS0234 PARA SIEMPRE ★★★ -->

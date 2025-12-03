@@ -120,16 +120,6 @@
             "related": ".xml"
           }
         }
-      },
-      "TPFinalAPI.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/TPFinalAPI.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/TPFinalAPI.Models.dll": {}
-        }
       }
     }
   },
@@ -374,11 +364,6 @@
         "mysqlconnector.2.3.7.nupkg.sha512",
         "mysqlconnector.nuspec"
       ]
-    },
-    "TPFinalAPI.Models/1.0.0": {
-      "type": "project",
-      "path": "../Models/Models.csproj",
-      "msbuildProject": "../Models/Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -387,24 +372,23 @@
       "Microsoft.Extensions.Configuration >= 9.0.0",
       "Microsoft.Extensions.Configuration.Abstractions >= 9.0.0",
       "Microsoft.Extensions.Configuration.Binder >= 9.0.0",
-      "MySqlConnector >= 2.3.7",
-      "TPFinalAPI.Models >= 1.0.0"
+      "MySqlConnector >= 2.3.7"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
+    "C:\\Users\\carlo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\Documents\\GitHub\\TPFinalDesarrolloDeSistemas\\DapperData\\DapperData.csproj",
+      "projectUniqueName": "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\DapperData\\DapperData.csproj",
       "projectName": "DapperData",
-      "projectPath": "C:\\Users\\Usuario\\Documents\\GitHub\\TPFinalDesarrolloDeSistemas\\DapperData\\DapperData.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\Documents\\GitHub\\TPFinalDesarrolloDeSistemas\\DapperData\\obj\\",
+      "projectPath": "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\DapperData\\DapperData.csproj",
+      "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\DapperData\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -415,11 +399,7 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {
-            "C:\\Users\\Usuario\\Documents\\GitHub\\TPFinalDesarrolloDeSistemas\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\Documents\\GitHub\\TPFinalDesarrolloDeSistemas\\Models\\Models.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -431,8 +411,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -470,26 +449,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.15, 8.0.15]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.15, 8.0.15]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.15, 8.0.15]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

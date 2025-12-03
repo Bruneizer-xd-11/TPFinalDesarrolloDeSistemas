@@ -1,6 +1,9 @@
+using System;
+using System.Threading.Tasks;
 using Dapper;
 using MySqlConnector;
-using TPFinalAPI.Models;
+using DapperData.Models;
+
 
 namespace Persistencia;
 

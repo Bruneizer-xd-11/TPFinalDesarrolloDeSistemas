@@ -1,0 +1,51 @@
+@model MVC.Models.TableroDetalleViewModel
+
+
+@{
+    ViewData["Title"] = $"Tablero: {Model.Nombre}";
+}
+
+<h2>@Model.Nombre</h2>
+
+<div class="row" id="board">
+    @foreach (var col in Model.Columnas)
+    {
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <span>@col.Nombre</span>
+                    <a class="btn btn-sm btn-outline-primary" href="/Tareas/Crear?tableroId=@Model.TableroId&columnaId=@col.ColumnaId">+ Tarea</a>
+                </div>
+                <div class="card-body">
+                    <div class="task-list" data-columnaid="@col.ColumnaId">
+                        @foreach (var t in col.Tareas)
+                        {
+                            <div class="card mb-2 task-item" draggable="true" data-tareaid="@t.Id">
+                                <div class="card-body">
+                                    <h6 class="card-title">@t.Titulo</h6>
+                                    <p class="card-text">@t.Descripcion</p>
+                                    <div class="d-flex justify-content-between">
+                                        <small>@t.Tipo</small>
+                                        <div>
+                                            <a class="btn btn-sm btn-outline-secondary" href="/Tareas/Editar/@t.Id">Editar</a>
+                                            <form style="display:inline" method="post" action="/Tareas/Eliminar">
+                                                <input type="hidden" name="id" value="@t.Id" />
+                                                <button class="btn btn-sm btn-danger" type="submit">Eliminar</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+<script>
+    // board.js handle drag & drop, but include inline fallback
+</script>
+}
