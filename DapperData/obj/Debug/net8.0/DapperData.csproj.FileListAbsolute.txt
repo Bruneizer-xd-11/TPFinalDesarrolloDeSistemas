@@ -56,3 +56,16 @@ C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\
 C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\refint\DapperData.dll
 C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.pdb
 C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\ref\DapperData.dll
+D:\Brenda\TPFinalDesarrolloDeSistemas\DapperData\bin\Debug\net8.0\DapperData.deps.json
+D:\Brenda\TPFinalDesarrolloDeSistemas\DapperData\bin\Debug\net8.0\DapperData.dll
+D:\Brenda\TPFinalDesarrolloDeSistemas\DapperData\bin\Debug\net8.0\DapperData.pdb
+D:\Brenda\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.csproj.AssemblyReference.cache
+D:\Brenda\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.GeneratedMSBuildEditorConfig.editorconfig
+D:\Brenda\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.AssemblyInfoInputs.cache
+D:\Brenda\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.AssemblyInfo.cs
+D:\Brenda\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.csproj.CoreCompileInputs.cache
+D:\Brenda\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.sourcelink.json
+D:\Brenda\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.dll
+D:\Brenda\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\refint\DapperData.dll
+D:\Brenda\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.pdb
+D:\Brenda\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\ref\DapperData.dll
