@@ -376,19 +376,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\clase\\.nuget\\packages\\": {}
+    "/home/et12alumno/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Brenda\\TPFinalDesarrolloDeSistemas\\DapperData\\DapperData.csproj",
+      "projectUniqueName": "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/DapperData/DapperData.csproj",
       "projectName": "DapperData",
-      "projectPath": "D:\\Brenda\\TPFinalDesarrolloDeSistemas\\DapperData\\DapperData.csproj",
-      "packagesPath": "C:\\Users\\clase\\.nuget\\packages\\",
-      "outputPath": "D:\\Brenda\\TPFinalDesarrolloDeSistemas\\DapperData\\obj\\",
+      "projectPath": "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/DapperData/DapperData.csproj",
+      "packagesPath": "/home/et12alumno/.nuget/packages/",
+      "outputPath": "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/DapperData/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\clase\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/et12alumno/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -406,13 +406,7 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.300"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -450,26 +444,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.20, 8.0.20]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.20, 8.0.20]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.20, 8.0.20]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

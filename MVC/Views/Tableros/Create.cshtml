@@ -1,0 +1,16 @@
+@model DapperData.Models.Tablero
+
+<h2>Crear Tablero</h2>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label for="Nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="Nombre" name="Nombre" required />
+    </div>
+    <div class="mb-3">
+        <label for="Descripcion" class="form-label">Descripción</label>
+        <textarea class="form-control" id="Descripcion" name="Descripcion"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear Tablero</button>
+</form>
+

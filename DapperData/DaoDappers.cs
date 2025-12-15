@@ -17,6 +17,27 @@ public class DaoDappers : IDao
     }
 
     private MySqlConnection GetConnection() => new MySqlConnection(_connectionString);
+// ====================== Tableros===================================//
+    public async Task<long> CrearTablero(Tablero tablero)
+    {
+        using var db = GetConnection();
+        return await db.ExecuteScalarAsync<long>(
+            "sp_crear_tablero",
+            new { p_nombre = tablero.Nombre, p_descripcion = tablero.Descripcion, p_propietario_id = tablero.PropietarioId },
+            commandType: System.Data.CommandType.StoredProcedure
+        );
+    }
+    public async Task<IEnumerable<Tablero>> ObtenerTablerosPorUsuario(long usuarioId)
+    {
+        using var db = GetConnection();
+        return await db.QueryAsync<Tablero>(
+            "sp_get_tableros_por_usuario",
+            new { p_usuario_id = usuarioId },
+            commandType: System.Data.CommandType.StoredProcedure
+        );
+    }
+
+
 
     // =====================  TAREAS  ===================== //
 

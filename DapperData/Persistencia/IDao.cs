@@ -9,6 +9,9 @@ namespace Persistencia;
 
 public interface IDao
 {
+    // ==== TABLEROS === //
+    Task<long> CrearTablero(Tablero tablero);
+    Task<IEnumerable<Tablero>> ObtenerTablerosPorUsuario(long usuarioId);
     // ==== TAREAS ====
     Task<IEnumerable<Tarea>> ObtenerTareas();
     Task<Tarea?> ObtenerTareaPorId(long id);

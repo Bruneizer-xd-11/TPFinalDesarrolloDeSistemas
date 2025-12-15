@@ -15,11 +15,12 @@ namespace MVC.Controllers
         }
 
         // ======================
-        // LOGIN GET
+        // LOGIN - GET
         // ======================
         [HttpGet]
         public IActionResult Login()
         {
+            // Retorna un DTO vacío para que la vista pueda enlazar los campos
             return View(new UsuarioLoginDto
             {
                 Username = "",
@@ -28,7 +29,7 @@ namespace MVC.Controllers
         }
 
         // ======================
-        // LOGIN POST
+        // LOGIN - POST
         // ======================
         [HttpPost]
         public async Task<IActionResult> Login(UsuarioLoginDto dto)
@@ -36,6 +37,7 @@ namespace MVC.Controllers
             if (!ModelState.IsValid)
                 return View(dto);
 
+            // Obtenemos el usuario por username
             var user = await _dao.ObtenerUsuarioPorUsername(dto.Username);
 
             if (user == null || string.IsNullOrEmpty(user.PasswordHash))
@@ -44,12 +46,9 @@ namespace MVC.Controllers
                 return View(dto);
             }
 
+            // Verificación de contraseña usando PasswordHasher
             var hasher = new PasswordHasher<Usuario>();
-            var result = hasher.VerifyHashedPassword(
-                user,
-                user.PasswordHash,
-                dto.Password
-            );
+            var result = hasher.VerifyHashedPassword(user, user.PasswordHash, dto.Password);
 
             if (result == PasswordVerificationResult.Failed)
             {
@@ -57,15 +56,16 @@ namespace MVC.Controllers
                 return View(dto);
             }
 
-            // ✅ SESIÓN (ESTO ESTABA ROMPIENDO)
+            // ✅ Guardamos sesión correctamente
             HttpContext.Session.SetString("UserId", user.Id.ToString());
             HttpContext.Session.SetString("Username", user.Username);
 
+            // Redirigimos a la vista de tableros
             return RedirectToAction("Index", "Tableros");
         }
 
         // ======================
-        // REGISTER GET
+        // REGISTER - GET
         // ======================
         [HttpGet]
         public IActionResult Register()
@@ -74,7 +74,7 @@ namespace MVC.Controllers
         }
 
         // ======================
-        // REGISTER POST
+        // REGISTER - POST
         // ======================
         [HttpPost]
         public async Task<IActionResult> Register(Usuario usuario)
@@ -82,11 +82,14 @@ namespace MVC.Controllers
             if (!ModelState.IsValid)
                 return View(usuario);
 
+            // Hasheamos la contraseña antes de guardar
             var hasher = new PasswordHasher<Usuario>();
             usuario.PasswordHash = hasher.HashPassword(usuario, usuario.PasswordHash);
 
+            // Registramos el usuario usando DAO
             await _dao.RegistrarUsuario(usuario);
 
+            // Redirigimos al login
             return RedirectToAction("Login");
         }
 
@@ -95,9 +98,9 @@ namespace MVC.Controllers
         // ======================
         public IActionResult Logout()
         {
+            // Limpiamos sesión
             HttpContext.Session.Clear();
             return RedirectToAction("Login");
         }
     }
 }
-

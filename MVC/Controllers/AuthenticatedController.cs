@@ -15,6 +15,17 @@ namespace MVC.Controllers
 
             base.OnActionExecuting(context);
         }
+        protected long UsuarioIdActual
+        {
+            get
+            {
+                var userIdStr = HttpContext.Session.GetString("UserId");
+                return userIdStr != null ? long.Parse(userIdStr) : 0;
+            }
+        }
     }
 }
+
+
+
 

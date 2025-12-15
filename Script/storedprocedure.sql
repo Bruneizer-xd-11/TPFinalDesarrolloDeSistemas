@@ -1,7 +1,4 @@
-source ddl.sql
-source storedProcedure.sql
 USE task_manager;
-
 DELIMITER $$
 
 -- 1) Obtener todas las tareas
@@ -173,5 +170,16 @@ BEGIN
     WHERE id = p_tarea_id;
     SELECT ROW_COUNT() AS filas_actualizadas;
 END$$
+-- 13) Obtener tableros por usuario
+DROP PROCEDURE IF EXISTS sp_get_tableros_por_usuario;
+CREATE PROCEDURE sp_get_tableros_por_usuario(IN p_usuario_id BIGINT)
+BEGIN
+    SELECT *
+    FROM tableros
+    WHERE propietario_id = p_usuario_id
+    ORDER BY created_at DESC;
+END$$
+
+
 
 DELIMITER ;

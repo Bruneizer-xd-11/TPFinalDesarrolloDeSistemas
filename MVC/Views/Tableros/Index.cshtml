@@ -1,9 +1,36 @@
+@model IEnumerable<DapperData.Models.Tablero>
 @{
-    ViewData["Title"] = "Tableros";
+    ViewData["Title"] = "Mis Tableros";
 }
 
 <h1>Mis Tableros</h1>
 
 <p>Login correcto 🎉</p>
 
-<a asp-controller="Auth" asp-action="Logout">Cerrar sesión</a>
+<a asp-controller="Auth" asp-action="Logout" class="btn btn-sm btn-danger mb-3">Cerrar sesión</a>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        No tienes tableros todavía. ¡Crea uno nuevo para comenzar! 
+        <a asp-action="Create" class="btn btn-sm btn-primary ms-2">Crear Tablero</a>
+    </div>
+}
+else
+{
+    <ul class="list-group">
+        @foreach (var tablero in Model)
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <strong>@tablero.Nombre</strong> 
+                    @if (!string.IsNullOrEmpty(tablero.Descripcion))
+                    {
+                        <span>- @tablero.Descripcion</span>
+                    }
+                </div>
+                <a class="btn btn-sm btn-outline-primary" asp-action="Detalle" asp-route-id="@tablero.Id">Ver detalles</a>
+            </li>
+        }
+    </ul>
+}
