@@ -4,92 +4,119 @@ using Persistencia;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MVC.Controllers;
-
-public class TablerosController : AuthenticatedController
+namespace MVC.Controllers
 {
-    private readonly IDao _dao;
-
-    public TablerosController(IDao dao)
+    public class TablerosController : AuthenticatedController
     {
-        _dao = dao;
-    }
+        private readonly IDao _dao;
 
-    // ======================
-    // Listar tableros del usuario
-    // ======================
-    public async Task<IActionResult> Index()
-    {
-        long usuarioId = UsuarioIdActual; // ID del usuario logueado
-        var tableros = await _dao.ObtenerTablerosPorUsuario(usuarioId);
-        return View(tableros);
-    }
-
-    // ======================
-    // Crear tablero (GET)
-    // ======================
-    public IActionResult Create()
-    {
-        return View();
-    }
-
-    // ======================
-    // Crear tablero (POST)
-    // ======================
-    [HttpPost]
-    public async Task<IActionResult> Create(Tablero tablero)
-    {
-        if (!ModelState.IsValid)
-            return View(tablero);
-
-        if (string.IsNullOrWhiteSpace(tablero.Nombre))
+        public TablerosController(IDao dao)
         {
-            ModelState.AddModelError("Nombre", "El nombre del tablero es obligatorio");
-            return View(tablero);
+            _dao = dao;
         }
 
-        // Asignar propietario
-        tablero.PropietarioId = UsuarioIdActual;
-
-        // Crear tablero y obtener ID
-        var idNuevoTablero = await _dao.CrearTablero(tablero);
-
-        // Redirigir al detalle del tablero recién creado
-        return RedirectToAction("Detalle", new { id = idNuevoTablero });
-    }
-
-    // ======================
-    // Ver detalle de tablero
-    // ======================
-    public async Task<IActionResult> Detalle(long id)
-    {
-        // Obtener todas las tareas
-        var tareas = await _dao.ObtenerTareas();
-
-        // Filtrar solo las tareas de este tablero
-        var tareasTablero = tareas.Where(t => t.TableroId == id).ToList();
-
-        if (!tareasTablero.Any())
-            return NotFound();
-
-        // Construir ViewModel
-        var vm = new TableroDetalleViewModel
+        // ======================
+        // Listar tableros del usuario
+        // ======================
+        public async Task<IActionResult> Index()
         {
-            TableroId = id,
-            Nombre = tareasTablero.First().TableroNombre
-        };
+            long usuarioId = UsuarioIdActual;
+            var tableros = await _dao.ObtenerTablerosPorUsuario(usuarioId);
+            return View(tableros);
+        }
 
-        // Agrupar tareas por columnas
-        foreach (var grupo in tareasTablero.GroupBy(t => new { t.ColumnaId, t.ColumnaNombre }))
+        // ======================
+        // Crear tablero (GET)
+        // ======================
+        public IActionResult Create()
         {
-            vm.Columnas.Add(new TableroColumnViewModel
+            return View();
+        }
+
+        // ======================
+        // Crear tablero (POST)
+        // ======================
+        [HttpPost]
+        public async Task<IActionResult> Create(Tablero tablero)
+        {
+            if (!ModelState.IsValid)
+                return View(tablero);
+
+            if (string.IsNullOrWhiteSpace(tablero.Nombre))
             {
-                ColumnaId = grupo.Key.ColumnaId,
-                Nombre = grupo.Key.ColumnaNombre,
-                Tareas = grupo.ToList()
-            });
+                ModelState.AddModelError("Nombre", "El nombre del tablero es obligatorio");
+                return View(tablero);
+            }
+
+            tablero.PropietarioId = UsuarioIdActual;
+
+            var idNuevoTablero = await _dao.CrearTablero(tablero);
+
+            return RedirectToAction("Detalle", new { id = idNuevoTablero });
         }
 
-        return View(vm);
+        // ======================
+        // Ver detalle del tablero y sus tareas
+        // ======================
+        public async Task<IActionResult> Detalle(long id)
+        {
+            // Obtener tablero
+            var tablero = (await _dao.ObtenerTablerosPorUsuario(UsuarioIdActual))
+                            .FirstOrDefault(t => t.Id == id);
+
+            if (tablero == null)
+                return NotFound();
+
+            // Obtener tareas del tablero
+            var tareas = (await _dao.ObtenerTareas()).Where(t => t.TableroId == id).ToList();
+
+            // Construir ViewModel
+            var vm = new TableroDetalleViewModel
+            {
+                TableroId = tablero.Id,
+                Nombre = tablero.Nombre
+            };
+
+            foreach (var grupo in tareas.GroupBy(t => new { t.ColumnaId, t.ColumnaNombre }))
+            {
+                vm.Columnas.Add(new TableroColumnViewModel
+                {
+                    ColumnaId = grupo.Key.ColumnaId,
+                    Nombre = grupo.Key.ColumnaNombre,
+                    Tareas = grupo.ToList()
+                });
+            }
+
+            return View(vm);
+        }
+
+        // ======================
+        // Crear tarea en tablero
+        // ======================
+        [HttpPost]
+        public async Task<IActionResult> CrearTarea(Tarea tarea)
+        {
+            if (string.IsNullOrWhiteSpace(tarea.Titulo))
+            {
+                TempData["Error"] = "El título es obligatorio";
+                return RedirectToAction("Detalle", new { id = tarea.TableroId });
+            }
+
+            tarea.CreadoPor = UsuarioIdActual;
+
+            await _dao.CrearTarea(tarea);
+
+            return RedirectToAction("Detalle", new { id = tarea.TableroId });
+        }
+
+        // ======================
+        // Eliminar tablero
+        // ======================
+        [HttpPost]
+        public async Task<IActionResult> Eliminar(long id)
+        {
+            await _dao.EliminarTablero(id);
+            return RedirectToAction("Index");
+        }
     }
 }

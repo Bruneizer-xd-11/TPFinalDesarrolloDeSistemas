@@ -1,10 +1,25 @@
 @model DapperData.Models.TableroDetalleViewModel
-
 @{
     ViewData["Title"] = Model.Nombre;
 }
 
 <h1>@Model.Nombre</h1>
+
+<div class="mb-4">
+    <h5>Crear nueva tarea</h5>
+    <form asp-action="CrearTarea" method="post" class="row g-2">
+        <input type="hidden" name="TableroId" value="@Model.TableroId" />
+        <div class="col-md-4">
+            <input type="text" name="Titulo" class="form-control" placeholder="Título" required />
+        </div>
+        <div class="col-md-6">
+            <input type="text" name="Descripcion" class="form-control" placeholder="Descripción" />
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary w-100">Agregar</button>
+        </div>
+    </form>
+</div>
 
 @if (!Model.Columnas.Any())
 {

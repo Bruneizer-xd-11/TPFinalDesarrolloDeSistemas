@@ -37,6 +37,18 @@ public class DaoDappers : IDao
         );
     }
 
+    public async Task<bool> EliminarTablero(long id)
+    {
+        using var db = GetConnection();
+        var result = await db.ExecuteScalarAsync<int>(
+            "sp_eliminar_tablero",
+            new { p_id = id },
+            commandType: System.Data.CommandType.StoredProcedure
+        );
+
+        return result > 0;
+    }
+
 
 
     // =====================  TAREAS  ===================== //

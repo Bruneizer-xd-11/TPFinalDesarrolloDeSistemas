@@ -5,16 +5,11 @@
 
 <h1>Mis Tableros</h1>
 
-<p>Login correcto 🎉</p>
-
-<a asp-controller="Auth" asp-action="Logout" class="btn btn-sm btn-danger mb-3">Cerrar sesión</a>
+<a asp-action="Create" class="btn btn-success mb-3">Crear nuevo tablero</a>
 
 @if (!Model.Any())
 {
-    <div class="alert alert-info">
-        No tienes tableros todavía. ¡Crea uno nuevo para comenzar! 
-        <a asp-action="Create" class="btn btn-sm btn-primary ms-2">Crear Tablero</a>
-    </div>
+    <p>No tienes tableros aún.</p>
 }
 else
 {
@@ -23,13 +18,15 @@ else
         {
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <div>
-                    <strong>@tablero.Nombre</strong> 
-                    @if (!string.IsNullOrEmpty(tablero.Descripcion))
-                    {
-                        <span>- @tablero.Descripcion</span>
-                    }
+                    <strong>@tablero.Nombre</strong> - @tablero.Descripcion
                 </div>
-                <a class="btn btn-sm btn-outline-primary" asp-action="Detalle" asp-route-id="@tablero.Id">Ver detalles</a>
+                <div>
+                    <a asp-action="Detalle" asp-route-id="@tablero.Id" class="btn btn-primary btn-sm me-2">Entrar</a>
+                    <form asp-action="Eliminar" method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="@tablero.Id" />
+                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                    </form>
+                </div>
             </li>
         }
     </ul>

@@ -12,6 +12,7 @@ public interface IDao
     // ==== TABLEROS === //
     Task<long> CrearTablero(Tablero tablero);
     Task<IEnumerable<Tablero>> ObtenerTablerosPorUsuario(long usuarioId);
+    Task<bool> EliminarTablero(long id);
     // ==== TAREAS ====
     Task<IEnumerable<Tarea>> ObtenerTareas();
     Task<Tarea?> ObtenerTareaPorId(long id);

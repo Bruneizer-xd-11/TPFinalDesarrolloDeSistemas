@@ -191,6 +191,13 @@ BEGIN
     VALUES (p_nombre, p_descripcion, p_propietario_id);
     SELECT LAST_INSERT_ID() AS nuevo_tablero_id;
 END$$
+-- 15) Eliminar Tablero
+DROP PROCEDURE IF EXISTS sp_eliminar_tablero;
+CREATE PROCEDURE sp_eliminar_tablero(IN p_id BIGINT)
+BEGIN
+    DELETE FROM tableros WHERE id = p_id;
+    SELECT ROW_COUNT() AS filas_eliminadas;
+END;
 
 
 
