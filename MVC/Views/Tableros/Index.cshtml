@@ -1,33 +1,26 @@
 @model IEnumerable<DapperData.Models.Tablero>
+
 @{
     ViewData["Title"] = "Mis Tableros";
 }
 
-<h1>Mis Tableros</h1>
+<h2>@ViewData["Title"]</h2>
 
-<a asp-action="Create" class="btn btn-success mb-3">Crear nuevo tablero</a>
+<div class="row">
+    @foreach (var tablero in Model)
+    {
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <strong>@tablero.Nombre</strong>
+                </div>
+                <div class="card-body">
+                    <p>@tablero.Descripcion</p>
+                    <a href="@Url.Action("Detalle", "Tableros", new { id = tablero.Id })" class="btn btn-primary">Ver Detalles</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
 
-@if (!Model.Any())
-{
-    <p>No tienes tableros aún.</p>
-}
-else
-{
-    <ul class="list-group">
-        @foreach (var tablero in Model)
-        {
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <div>
-                    <strong>@tablero.Nombre</strong> - @tablero.Descripcion
-                </div>
-                <div>
-                    <a asp-action="Detalle" asp-route-id="@tablero.Id" class="btn btn-primary btn-sm me-2">Entrar</a>
-                    <form asp-action="Eliminar" method="post" style="display:inline;">
-                        <input type="hidden" name="id" value="@tablero.Id" />
-                        <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                    </form>
-                </div>
-            </li>
-        }
-    </ul>
-}
+<a href="@Url.Action("Create", "Tableros")" class="btn btn-success">Crear Nuevo Tablero</a>

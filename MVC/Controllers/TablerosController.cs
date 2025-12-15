@@ -4,119 +4,113 @@ using Persistencia;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MVC.Controllers
+namespace MVC.Controllers;
+
+public class TablerosController : AuthenticatedController
 {
-    public class TablerosController : AuthenticatedController
+    private readonly IDao _dao;
+
+    public TablerosController(IDao dao)
     {
-        private readonly IDao _dao;
+        _dao = dao;
+    }
 
-        public TablerosController(IDao dao)
+    // ======================
+    // Listar tableros del usuario
+    // ======================
+    public async Task<IActionResult> Index()
+    {
+        long usuarioId = UsuarioIdActual; // ID del usuario logueado
+        var tableros = await _dao.ObtenerTablerosPorUsuario(usuarioId);
+        return View(tableros);
+    }
+
+    // ======================
+    // Crear tablero (GET)
+    // ======================
+    public IActionResult Create()
+    {
+        return View();
+    }
+
+    // ======================
+    // Crear tablero (POST)
+    // ======================
+    [HttpPost]
+    public async Task<IActionResult> Create(Tablero tablero)
+    {
+        if (!ModelState.IsValid)
+            return View(tablero);
+
+        if (string.IsNullOrWhiteSpace(tablero.Nombre))
         {
-            _dao = dao;
+            ModelState.AddModelError("Nombre", "El nombre del tablero es obligatorio");
+            return View(tablero);
         }
 
-        // ======================
-        // Listar tableros del usuario
-        // ======================
-        public async Task<IActionResult> Index()
-        {
-            long usuarioId = UsuarioIdActual;
-            var tableros = await _dao.ObtenerTablerosPorUsuario(usuarioId);
-            return View(tableros);
-        }
+        // Asignar propietario
+        tablero.PropietarioId = UsuarioIdActual;
 
-        // ======================
-        // Crear tablero (GET)
-        // ======================
-        public IActionResult Create()
-        {
-            return View();
-        }
+        // Crear tablero y obtener ID
+        var idNuevoTablero = await _dao.CrearTablero(tablero);
 
-        // ======================
-        // Crear tablero (POST)
-        // ======================
-        [HttpPost]
-        public async Task<IActionResult> Create(Tablero tablero)
-        {
-            if (!ModelState.IsValid)
-                return View(tablero);
+        // Crear columnas por defecto al crear un tablero
+        await _dao.CrearColumna(new Columna { Nombre = "Por hacer", TableroId = idNuevoTablero });
+        await _dao.CrearColumna(new Columna { Nombre = "En progreso", TableroId = idNuevoTablero });
+        await _dao.CrearColumna(new Columna { Nombre = "Finalizado", TableroId = idNuevoTablero });
 
-            if (string.IsNullOrWhiteSpace(tablero.Nombre))
+        // Redirigir al detalle del tablero recién creado
+        return RedirectToAction("Detalle", new { id = idNuevoTablero });
+    }
+
+    // ======================
+    // Ver detalle de tablero
+    // ======================
+    public async Task<IActionResult> Detalle(long id)
+    {
+        // Obtener todas las tareas
+        var tareas = await _dao.ObtenerTareas();
+
+        // Filtrar solo las tareas de este tablero
+        var tareasTablero = tareas.Where(t => t.TableroId == id).ToList();
+
+        // Construir ViewModel
+        var vm = new TableroDetalleViewModel
+        {
+            TableroId = id,
+            Nombre = tareasTablero.FirstOrDefault()?.TableroNombre ?? "Nuevo Tablero"
+        };
+
+        // Obtener columnas del tablero (para el formulario de crear tarea)
+        var columnas = await _dao.ObtenerColumnasPorTablero(id);
+        foreach (var col in columnas)
+        {
+            vm.Columnas.Add(new TableroColumnViewModel
             {
-                ModelState.AddModelError("Nombre", "El nombre del tablero es obligatorio");
-                return View(tablero);
-            }
-
-            tablero.PropietarioId = UsuarioIdActual;
-
-            var idNuevoTablero = await _dao.CrearTablero(tablero);
-
-            return RedirectToAction("Detalle", new { id = idNuevoTablero });
+                ColumnaId = col.Id,
+                Nombre = col.Nombre,
+                Tareas = tareasTablero.Where(t => t.ColumnaId == col.Id).ToList()
+            });
         }
 
-        // ======================
-        // Ver detalle del tablero y sus tareas
-        // ======================
-        public async Task<IActionResult> Detalle(long id)
+        return View(vm);
+    }
+
+    // ======================
+    // Crear tarea dentro del tablero
+    // ======================
+    [HttpPost]
+    public async Task<IActionResult> CrearTarea(Tarea tarea)
+    {
+        if (tarea.ColumnaId == 0)
         {
-            // Obtener tablero
-            var tablero = (await _dao.ObtenerTablerosPorUsuario(UsuarioIdActual))
-                            .FirstOrDefault(t => t.Id == id);
-
-            if (tablero == null)
-                return NotFound();
-
-            // Obtener tareas del tablero
-            var tareas = (await _dao.ObtenerTareas()).Where(t => t.TableroId == id).ToList();
-
-            // Construir ViewModel
-            var vm = new TableroDetalleViewModel
-            {
-                TableroId = tablero.Id,
-                Nombre = tablero.Nombre
-            };
-
-            foreach (var grupo in tareas.GroupBy(t => new { t.ColumnaId, t.ColumnaNombre }))
-            {
-                vm.Columnas.Add(new TableroColumnViewModel
-                {
-                    ColumnaId = grupo.Key.ColumnaId,
-                    Nombre = grupo.Key.ColumnaNombre,
-                    Tareas = grupo.ToList()
-                });
-            }
-
-            return View(vm);
-        }
-
-        // ======================
-        // Crear tarea en tablero
-        // ======================
-        [HttpPost]
-        public async Task<IActionResult> CrearTarea(Tarea tarea)
-        {
-            if (string.IsNullOrWhiteSpace(tarea.Titulo))
-            {
-                TempData["Error"] = "El título es obligatorio";
-                return RedirectToAction("Detalle", new { id = tarea.TableroId });
-            }
-
-            tarea.CreadoPor = UsuarioIdActual;
-
-            await _dao.CrearTarea(tarea);
-
+            ModelState.AddModelError("", "Debe seleccionar una columna válida");
             return RedirectToAction("Detalle", new { id = tarea.TableroId });
         }
 
-        // ======================
-        // Eliminar tablero
-        // ======================
-        [HttpPost]
-        public async Task<IActionResult> Eliminar(long id)
-        {
-            await _dao.EliminarTablero(id);
-            return RedirectToAction("Index");
-        }
+        tarea.CreadoPor = UsuarioIdActual;
+        await _dao.CrearTarea(tarea);
+
+        return RedirectToAction("Detalle", new { id = tarea.TableroId });
     }
 }

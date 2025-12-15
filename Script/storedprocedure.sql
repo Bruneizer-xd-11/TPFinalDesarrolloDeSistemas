@@ -199,6 +199,24 @@ BEGIN
     SELECT ROW_COUNT() AS filas_eliminadas;
 END;
 
+-- 16) Crear Columna
+DROP PROCEDURE IF EXISTS sp_crear_columna;
+CREATE PROCEDURE sp_crear_columna(
+    IN p_nombre VARCHAR(100),
+    IN p_tablero_id BIGINT
+)
+BEGIN
+    INSERT INTO columnas(nombre, tablero_id)
+    VALUES(p_nombre, p_tablero_id);
+    SELECT LAST_INSERT_ID() AS nueva_columna_id;
+END$$
+
+-- 17)Obtener columnas por tablero
+DROP PROCEDURE IF EXISTS sp_get_columnas_por_tablero;
+CREATE PROCEDURE sp_get_columnas_por_tablero(IN p_tablero_id BIGINT)
+BEGIN
+    SELECT * FROM columnas WHERE tablero_id = p_tablero_id ORDER BY posicion;
+END$$
 
 
 DELIMITER ;

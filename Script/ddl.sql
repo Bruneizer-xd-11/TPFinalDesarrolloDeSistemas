@@ -1,4 +1,3 @@
--- schema.sql
 -- Sistema de gestión de tareas (MySQL)
 -- Crear bases, tablas, índices, constraints y datos iniciales
 -- Fecha: 2025-11-05
@@ -83,7 +82,7 @@ CREATE TABLE tablero_compartido (
 );
 
 -- =============================
--- ÍNDICES (OPTIMIZACIÓN)
+-- ÍNDICES
 -- =============================
 CREATE INDEX idx_tareas_tablero ON tareas(tablero_id);
 CREATE INDEX idx_tareas_columna ON tareas(columna_id);
@@ -92,31 +91,23 @@ CREATE INDEX idx_tareas_prioridad ON tareas(prioridad);
 CREATE INDEX idx_tareas_titulo ON tareas(titulo(100));
 
 -- ============================================================
--- SEED: Datos iniciales correctos y en orden sin errores
+-- SEED: Datos iniciales
 -- ============================================================
-
--- 1) Crear usuario propietario con password_hash válido
 INSERT INTO usuarios (nombre, email, username, password_hash)
 VALUES ('Carlos', 'carlos@example.com', 'carlos123', SHA2('123456',256));
 SET @user_id = LAST_INSERT_ID();
 
--- 2) Crear tablero demo asignado al usuario
 INSERT INTO tableros (nombre, descripcion, propietario_id)
 VALUES ('Demo Board', 'Tablero demo con columnas por defecto', @user_id);
 SET @board_id = LAST_INSERT_ID();
 
--- 3) Crear columnas base
 INSERT INTO columnas (tablero_id, nombre, posicion) VALUES
 (@board_id, 'backlog', 1),
 (@board_id, 'in progress', 2),
 (@board_id, 'done', 3);
 
--- 4) Obtener columna backlog para demo
 SET @columna_backlog = (SELECT id FROM columnas WHERE tablero_id = @board_id AND nombre='backlog' LIMIT 1);
 
--- 5) Crear tarea de ejemplo
 INSERT INTO tareas (tablero_id, columna_id, titulo, descripcion, prioridad, tiempo_estimado_min, fecha_inicio, fecha_fin, tipo, creado_por)
 VALUES (@board_id, @columna_backlog, 'Tarea ejemplo', 'Esta es una tarea de ejemplo para demo', 'high', 90,
         '2025-11-06 09:00:00', '2025-11-07 18:00:00', 'feature', @user_id);
-
--- FIN ✔

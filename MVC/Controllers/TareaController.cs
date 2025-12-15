@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using DapperData.Models;
 using Persistencia;
+using DapperData.Models;
+using MVC.ViewModels;
+using System.Threading.Tasks;
 
 namespace MVC.Controllers;
 
@@ -13,42 +15,74 @@ public class TareaController : AuthenticatedController
         _dao = dao;
     }
 
-    // GET
-    public IActionResult Create(long tableroId, long columnaId)
+    // Crear tarea (GET)
+    public async Task<IActionResult> Create(long tableroId)
     {
-        return View(new TareaCreateViewModel
+        var columnas = await _dao.ObtenerColumnasPorTablero(tableroId);
+
+        var vm = new CrearTareaViewModel
         {
             TableroId = tableroId,
-            ColumnaId = columnaId
-        });
+            Columnas = columnas
+        };
+
+        return View(vm);
     }
 
-    // POST
-[HttpPost]
-public async Task<IActionResult> Create(TareaCreateViewModel vm)
-{
-    if (!ModelState.IsValid)
-        return View(vm);
-
-    var tarea = new Tarea
+    // Crear tarea (POST)
+    [HttpPost]
+    public async Task<IActionResult> Create(CrearTareaViewModel vm)
     {
-        TableroId = vm.TableroId,
-        ColumnaId = vm.ColumnaId,
-        Titulo = vm.Titulo,
-        Descripcion = vm.Descripcion,
-        Tipo = vm.Tipo,
-        Prioridad = vm.Prioridad,
-        TiempoEstimadoMin = vm.TiempoEstimadoMin,
-        FechaInicio = vm.FechaInicio,
-        FechaFin = vm.FechaFin,
-        CreadoPor = vm.CreadoPor,
-        CreatedAt = DateTime.UtcNow,
-        UpdatedAt = DateTime.UtcNow
-    };
+        if (!ModelState.IsValid)
+        {
+            vm.Columnas = await _dao.ObtenerColumnasPorTablero(vm.TableroId);
+            return View(vm);
+        }
 
-    await _dao.CrearTarea(tarea);
+        vm.Tarea.CreadoPor = UsuarioIdActual;
+        await _dao.CrearTarea(vm.Tarea);
 
-    return RedirectToAction("Detalle", "Tableros", new { id = vm.TableroId });
-}
+        return RedirectToAction("Detalle", "Tableros", new { id = vm.TableroId });
+    }
 
+    // Editar tarea (GET)
+    public async Task<IActionResult> Edit(long id)
+    {
+        var tarea = await _dao.ObtenerTareaPorId(id);
+        if (tarea == null) return NotFound();
+
+        var columnas = await _dao.ObtenerColumnasPorTablero(tarea.TableroId);
+
+        var vm = new EditarTareaViewModel
+        {
+            Tarea = tarea,
+            Columnas = columnas
+        };
+
+        return View(vm);
+    }
+
+    // Editar tarea (POST)
+    [HttpPost]
+    public async Task<IActionResult> Edit(EditarTareaViewModel vm)
+    {
+        if (!ModelState.IsValid)
+        {
+            vm.Columnas = await _dao.ObtenerColumnasPorTablero(vm.Tarea.TableroId);
+            return View(vm);
+        }
+
+        await _dao.ActualizarTarea(vm.Tarea);
+        return RedirectToAction("Detalle", "Tableros", new { id = vm.Tarea.TableroId });
+    }
+
+    // Eliminar tarea
+    public async Task<IActionResult> Delete(long id)
+    {
+        var tarea = await _dao.ObtenerTareaPorId(id);
+        if (tarea == null) return NotFound();
+
+        await _dao.EliminarTarea(id);
+        return RedirectToAction("Detalle", "Tableros", new { id = tarea.TableroId });
+    }
 }

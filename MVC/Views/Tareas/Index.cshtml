@@ -1,0 +1,60 @@
+@model IEnumerable<DapperData.Models.Tarea>
+
+@{
+    ViewData["Title"] = "Tareas";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a href="@Url.Action("Crear", "Tarea", new { tableroId = Model.FirstOrDefault()?.TableroId })" class="btn btn-primary">Crear Tarea</a>
+</p>
+
+<form method="get" action="@Url.Action("FiltrarPorEstado", "Tarea")">
+    <label for="columna">Filtrar por Estado:</label>
+    <select name="columna" id="columna" class="form-control">
+        <option value="Por hacer">Por hacer</option>
+        <option value="En progreso">En progreso</option>
+        <option value="Finalizado">Finalizado</option>
+    </select>
+    <button type="submit" class="btn btn-secondary">Filtrar</button>
+</form>
+
+<form method="get" action="@Url.Action("FiltrarPorPrioridad", "Tarea")">
+    <label for="prioridad">Filtrar por Prioridad:</label>
+    <select name="prioridad" id="prioridad" class="form-control">
+        <option value="low">Baja</option>
+        <option value="high">Alta</option>
+        <option value="prendida_fuego">Urgente</option>
+    </select>
+    <button type="submit" class="btn btn-secondary">Filtrar</button>
+</form>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Columna</th>
+            <th>Prioridad</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tarea in Model)
+        {
+            <tr>
+                <td>@tarea.Titulo</td>
+                <td>@tarea.Descripcion</td>
+                <td>@tarea.ColumnaNombre</td>
+                <td>@tarea.Prioridad</td>
+                <td>
+                    <a href="@Url.Action("Editar", "Tarea", new { id = tarea.Id })" class="btn btn-warning">Editar</a>
+                    <form method="post" action="@Url.Action("Eliminar", "Tarea", new { id = tarea.Id, tableroId = tarea.TableroId })" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

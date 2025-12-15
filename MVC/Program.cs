@@ -19,9 +19,9 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-// DAO
+// DAO CORREGIDO
 builder.Services.AddScoped<IDao>(sp =>
-    new DaoDappers(builder.Configuration.GetConnectionString("DefaultConnection")!)
+    new DaoDapper(builder.Configuration.GetConnectionString("DefaultConnection")!)
 );
 
 var app = builder.Build();

@@ -1,54 +1,60 @@
 @model DapperData.Models.TableroDetalleViewModel
+
 @{
-    ViewData["Title"] = Model.Nombre;
+    ViewData["Title"] = "Detalle del Tablero";
 }
 
-<h1>@Model.Nombre</h1>
+<h2>@Model.Nombre</h2>
 
-<div class="mb-4">
-    <h5>Crear nueva tarea</h5>
-    <form asp-action="CrearTarea" method="post" class="row g-2">
-        <input type="hidden" name="TableroId" value="@Model.TableroId" />
+<div class="row">
+    @foreach (var columna in Model.Columnas)
+    {
         <div class="col-md-4">
-            <input type="text" name="Titulo" class="form-control" placeholder="Título" required />
-        </div>
-        <div class="col-md-6">
-            <input type="text" name="Descripcion" class="form-control" placeholder="Descripción" />
-        </div>
-        <div class="col-md-2">
-            <button type="submit" class="btn btn-primary w-100">Agregar</button>
-        </div>
-    </form>
-</div>
+            <div class="card mb-3">
+                <div class="card-header bg-primary text-white">
+                    @columna.Nombre
+                </div>
+                <div class="card-body">
+                    @if (columna.Tareas.Any())
+                    {
+                        <ul class="list-group">
+                            @foreach (var tarea in columna.Tareas)
+                            {
+                                <li class="list-group-item">
+                                    <strong>@tarea.Titulo</strong><br />
+                                    @tarea.Descripcion
+                                    <br />
+                                    <small>Prioridad: @tarea.Prioridad</small>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p>No hay tareas en esta columna</p>
+                    }
 
-@if (!Model.Columnas.Any())
-{
-    <p>No hay tareas en este tablero todavía.</p>
-}
-else
-{
-    <div class="row">
-        @foreach (var columna in Model.Columnas)
-        {
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-header bg-primary text-white">
-                        <h5>@columna.Nombre</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        @foreach (var tarea in columna.Tareas)
-                        {
-                            <li class="list-group-item">
-                                <strong>@tarea.Titulo</strong>
-                                @if (!string.IsNullOrEmpty(tarea.Descripcion))
-                                {
-                                    <p>@tarea.Descripcion</p>
-                                }
-                            </li>
-                        }
-                    </ul>
+                    <!-- Formulario para agregar tarea a esta columna -->
+                    <form asp-action="CrearTarea" method="post" class="mt-2">
+                        <input type="hidden" name="TableroId" value="@Model.TableroId" />
+                        <input type="hidden" name="ColumnaId" value="@columna.ColumnaId" />
+                        <div class="mb-2">
+                            <input type="text" name="Titulo" placeholder="Título de la tarea" class="form-control" required />
+                        </div>
+                        <div class="mb-2">
+                            <textarea name="Descripcion" placeholder="Descripción" class="form-control"></textarea>
+                        </div>
+                        <div class="mb-2">
+                            <select name="Prioridad" class="form-control">
+                                <option value="low">Baja</option>
+                                <option value="high">Alta</option>
+                                <option value="prendida_fuego">¡Urgente!</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-sm">Agregar tarea</button>
+                    </form>
                 </div>
             </div>
-        }
-    </div>
-}
+        </div>
+    }
+</div>

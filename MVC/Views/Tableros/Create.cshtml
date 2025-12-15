@@ -1,24 +1,23 @@
 @model DapperData.Models.Tablero
+
 @{
-    ViewData["Title"] = "Crear Tablero";
+    ViewData["Title"] = "Crear Nuevo Tablero";
 }
 
-<h1>Crear Tablero</h1>
+<h2>@ViewData["Title"]</h2>
 
 <form asp-action="Create" method="post">
-    <div class="mb-3">
-        <label class="form-label">Nombre</label>
-        <input asp-for="Nombre" class="form-control" required />
-        <span asp-validation-for="Nombre" class="text-danger"></span>
+    <div class="form-group">
+        <label for="Nombre">Nombre del Tablero</label>
+        <input type="text" class="form-control" id="Nombre" name="Nombre" required />
     </div>
-    <div class="mb-3">
-        <label class="form-label">Descripción</label>
-        <textarea asp-for="Descripcion" class="form-control"></textarea>
+
+    <div class="form-group">
+        <label for="Descripcion">Descripción</label>
+        <textarea class="form-control" id="Descripcion" name="Descripcion" rows="4"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Crear</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+
+    <button type="submit" class="btn btn-primary mt-3">Crear Tablero</button>
 </form>
 
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+<a href="@Url.Action("Index", "Tableros")" class="btn btn-secondary mt-3">Volver a la lista de tableros</a>

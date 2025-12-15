@@ -1,20 +1,42 @@
-@model DapperData.Models.TareaEditViewModel
+@model MVC.ViewModels.EditarTareaViewModel
+
+@{
+    ViewData["Title"] = "Editar Tarea";
+}
 
 <h2>Editar Tarea</h2>
 
-<form method="post">
-    <input type="hidden" asp-for="Id" />
-    <input type="hidden" asp-for="TableroId" />
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Tarea.Id" />
+    <input type="hidden" asp-for="Tarea.TableroId" />
 
-    <div>
-        <label>Título</label>
-        <input asp-for="Titulo" class="form-control" />
+    <div class="form-group">
+        <label asp-for="Tarea.Titulo"></label>
+        <input asp-for="Tarea.Titulo" class="form-control" />
+        <span asp-validation-for="Tarea.Titulo" class="text-danger"></span>
     </div>
 
-    <div>
-        <label>Descripción</label>
-        <textarea asp-for="Descripcion" class="form-control"></textarea>
+    <div class="form-group">
+        <label asp-for="Tarea.Descripcion"></label>
+        <textarea asp-for="Tarea.Descripcion" class="form-control"></textarea>
     </div>
 
-    <button class="btn btn-primary mt-2">Guardar</button>
+    <div class="form-group">
+        <label asp-for="Tarea.ColumnaId">Columna</label>
+        <select asp-for="Tarea.ColumnaId" class="form-control">
+            @foreach (var columna in Model.Columnas)
+            {
+                if (columna.Id == Model.Tarea.ColumnaId)
+                {
+                    <option value="@columna.Id" selected>@columna.Nombre</option>
+                }
+                else
+                {
+                    <option value="@columna.Id">@columna.Nombre</option>
+                }
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
 </form>

@@ -1,9 +1,7 @@
-using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using Dapper;
 using MySqlConnector;
 using DapperData.Models;
-
 
 namespace Persistencia;
 
@@ -13,6 +11,11 @@ public interface IDao
     Task<long> CrearTablero(Tablero tablero);
     Task<IEnumerable<Tablero>> ObtenerTablerosPorUsuario(long usuarioId);
     Task<bool> EliminarTablero(long id);
+
+    // ==== COLUMNAS === //
+    Task<long> CrearColumna(Columna columna);
+    Task<List<Columna>> ObtenerColumnasPorTablero(long tableroId);
+
     // ==== TAREAS ====
     Task<IEnumerable<Tarea>> ObtenerTareas();
     Task<Tarea?> ObtenerTareaPorId(long id);
@@ -20,13 +23,10 @@ public interface IDao
     Task<bool> ActualizarTarea(Tarea tarea);
     Task<bool> EliminarTarea(long id);
 
-    // ==== NUEVOS ====
-    Task<List<Tarea>> ObtenerTareasDeUsuario(long usuarioId);
-    Task<Usuario?> ObtenerUsuarioPorId(long id);
-    Task<Usuario?> ObtenerUsuarioPorUsername(string username);
-
     // ==== USUARIOS ====
     Task<long> RegistrarUsuario(Usuario usuario);
+    Task<Usuario?> ObtenerUsuarioPorId(long id);
+    Task<Usuario?> ObtenerUsuarioPorUsername(string username);
 
     // ==== FILTROS ====
     Task<IEnumerable<Tarea>> ObtenerTareasPorEstado(string columna);
