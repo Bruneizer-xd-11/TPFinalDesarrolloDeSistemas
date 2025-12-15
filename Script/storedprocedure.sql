@@ -179,6 +179,18 @@ BEGIN
     WHERE propietario_id = p_usuario_id
     ORDER BY created_at DESC;
 END$$
+-- 14) Crear tablero
+DROP PROCEDURE IF EXISTS sp_crear_tablero;
+CREATE PROCEDURE sp_crear_tablero(
+    IN p_nombre VARCHAR(150),
+    IN p_descripcion TEXT,
+    IN p_propietario_id BIGINT
+)
+BEGIN
+    INSERT INTO tableros(nombre, descripcion, propietario_id)
+    VALUES (p_nombre, p_descripcion, p_propietario_id);
+    SELECT LAST_INSERT_ID() AS nuevo_tablero_id;
+END$$
 
 
 
