@@ -1,14 +1,16 @@
-using Persistencia;   // 👈 ARRIBA DE TODO
+using Dapper;
+using Persistencia;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
+Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Servicios
+// MVC
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddAuthentication();
-
+// Session
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
@@ -17,32 +19,18 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-// 👉 REGISTRO DEL DAO (ESTO ERA CLAVE)
+// DAO
 builder.Services.AddScoped<IDao>(sp =>
-    new DaoDappers(
-        builder.Configuration.GetConnectionString("DefaultConnection")!
-    )
+    new DaoDappers(builder.Configuration.GetConnectionString("DefaultConnection")!)
 );
 
 var app = builder.Build();
 
-// Pipeline
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
-}
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
-app.UseRouting();
 app.UseSession();
+app.UseRouting();
 
-app.UseAuthentication();
-app.UseAuthorization();
-
-// Ruta por defecto → Login
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Auth}/{action=Login}/{id?}");

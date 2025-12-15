@@ -1,16 +1,32 @@
 @model DapperData.Models.UsuarioLoginDto
+
 <h2>Login</h2>
 
-<form method="post">
-    <div>
+<!-- 🔴 Mostrar errores -->
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <div>@error.ErrorMessage</div>
+        }
+    </div>
+}
+
+<form asp-controller="Auth" asp-action="Login" method="post">
+    <div class="mb-2">
         <label>Username</label>
         <input asp-for="Username" class="form-control" />
     </div>
-    <div>
+
+    <div class="mb-2">
         <label>Password</label>
         <input asp-for="Password" type="password" class="form-control" />
     </div>
-    <button type="submit" class="btn btn-primary mt-2">Ingresar</button>
+
+    <button type="submit" class="btn btn-primary mt-2">
+        Ingresar
+    </button>
 </form>
 
 <a href="/Auth/Register">Crear cuenta</a>

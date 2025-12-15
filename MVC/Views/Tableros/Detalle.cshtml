@@ -1,0 +1,52 @@
+@model DapperData.Models.TableroDetalleViewModel
+
+@{
+    ViewData["Title"] = Model.Nombre;
+}
+
+<div class="container-fluid">
+    <h2 class="mb-4">@Model.Nombre</h2>
+
+    <div class="row flex-nowrap overflow-auto">
+        @foreach (var columna in Model.Columnas)
+        {
+            <div class="col-3">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-dark text-white text-center">
+                        <strong>@columna.Nombre</strong>
+                    </div>
+
+                    <div class="card-body columna"
+                         data-columna-id="@columna.ColumnaId"
+                         style="min-height: 350px;">
+                        @foreach (var tarea in columna.Tareas)
+                        {
+                            <div class="card mb-2 tarea"
+                                 draggable="true"
+                                 data-tarea-id="@tarea.Id">
+                                <div class="card-body p-2">
+                                    <strong>@tarea.Titulo</strong><br />
+                                    <small class="text-muted">@tarea.Prioridad</small>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                    <div class="card-footer text-center">
+                        <a asp-controller="Tarea"
+                           asp-action="Create"
+                           asp-route-tableroId="@Model.TableroId"
+                           asp-route-columnaId="@columna.ColumnaId"
+                           class="btn btn-sm btn-success">
+                            + Tarea
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/kanban.js"></script>
+}

@@ -1,47 +1,60 @@
 using Microsoft.AspNetCore.Mvc;
 using DapperData.Models;
 using Persistencia;
-using MVC.Models;
 
-namespace MVC.Controllers
+namespace MVC.Controllers;
+
+public class TablerosController : AuthenticatedController
 {
-    public class TablerosController : Controller
+    private readonly IDao _dao;
+
+    public TablerosController(IDao dao)
     {
-        private readonly IDao _dao;
-        public TablerosController(IDao dao) => _dao = dao;
+        _dao = dao;
+    }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public async Task<IActionResult> Detalle(long id = 1)
-        {
-
-            var tareas = (await _dao.ObtenerTareas())
-                .Where(t => t.TableroId == id)
-                .ToList();
-
-            var columnas = tareas
-    .GroupBy(t => new { t.ColumnaId, Nombre = t.ColumnaNombre ?? "Sin columna" })
-    .Select(g => new MVC.Models.TableroColumnViewModel
+    public async Task<IActionResult> Index()
     {
-        ColumnaId = g.Key.ColumnaId,
-        Nombre = g.Key.Nombre,
-        Tareas = g.OrderByDescending(t => t.CreatedAt).ToList()
-    })
-    .OrderBy(c => c.ColumnaId)
-    .ToList();
+        // USAMOS EL MÉTODO QUE SÍ TENÉS
+        var tareas = await _dao.ObtenerTareas();
 
-            var vm = new MVC.Models.TableroDetalleViewModel
+        // Agrupar por tablero
+        var tableros = tareas
+            .GroupBy(t => new { t.TableroId, t.TableroNombre })
+            .Select(g => new Tablero
             {
-                TableroId = id,
-                Nombre = "Demo Board",
-                Columnas = columnas
-            };
+                Id = g.Key.TableroId,
+                Nombre = g.Key.TableroNombre
+            })
+            .ToList();
 
+        return View(tableros);
+    }
 
-            return View(vm);
+    public async Task<IActionResult> Detalle(long id)
+    {
+        var tareas = await _dao.ObtenerTareas();
+        var tareasTablero = tareas.Where(t => t.TableroId == id).ToList();
+
+        if (!tareasTablero.Any())
+            return NotFound();
+
+        var vm = new TableroDetalleViewModel
+        {
+            TableroId = id,
+            Nombre = tareasTablero.First().TableroNombre
+        };
+
+        foreach (var grupo in tareasTablero.GroupBy(t => new { t.ColumnaId, t.ColumnaNombre }))
+        {
+            vm.Columnas.Add(new TableroColumnViewModel
+            {
+                ColumnaId = grupo.Key.ColumnaId,
+                Nombre = grupo.Key.ColumnaNombre,
+                Tareas = grupo.ToList()
+            });
         }
+
+        return View(vm);
     }
 }
