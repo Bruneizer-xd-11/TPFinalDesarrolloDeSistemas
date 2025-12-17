@@ -85,7 +85,10 @@
           "MySqlConnector": "2.3.7"
         },
         "runtime": {
-          "DapperData.dll": {}
+          "DapperData.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

@@ -376,19 +376,19 @@
     ]
   },
   "packageFolders": {
-    "/home/et12alumno/.nuget/packages/": {}
+    "C:\\Users\\carlo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/DapperData/DapperData.csproj",
+      "projectUniqueName": "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\DapperData\\DapperData.csproj",
       "projectName": "DapperData",
-      "projectPath": "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/DapperData/DapperData.csproj",
-      "packagesPath": "/home/et12alumno/.nuget/packages/",
-      "outputPath": "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/DapperData/obj/",
+      "projectPath": "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\DapperData\\DapperData.csproj",
+      "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\DapperData\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/et12alumno/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -406,6 +406,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -449,7 +454,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

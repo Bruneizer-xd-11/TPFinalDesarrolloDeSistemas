@@ -89,3 +89,14 @@ C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Deb
 C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net8.0\TPFinalAPI.csproj.Up2Date
 C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net8.0\TPFinalAPI.genruntimeconfig.cache
 C:\Users\Usuario\Documents\GitHub\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net8.0\ref\TPFinalAPI.dll
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net8.0\TPFinalAPI.csproj.AssemblyReference.cache
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net8.0\TPFinalAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net8.0\TPFinalAPI.AssemblyInfoInputs.cache
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net8.0\TPFinalAPI.AssemblyInfo.cs
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net8.0\TPFinalAPI.csproj.CoreCompileInputs.cache
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net8.0\TPFinalAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net8.0\TPFinalAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net8.0\TPFinalAPI.sourcelink.json
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net8.0\TPFinalAPI.dll
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net8.0\refint\TPFinalAPI.dll
+C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\TPFinalAPI\obj\Debug\net8.0\TPFinalAPI.pdb

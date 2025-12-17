@@ -14,13 +14,10 @@ namespace MVC.Controllers
             _dao = dao;
         }
 
-        // ======================
         // LOGIN - GET
-        // ======================
         [HttpGet]
         public IActionResult Login()
         {
-            // Retorna un DTO vacío para que la vista pueda enlazar los campos
             return View(new UsuarioLoginDto
             {
                 Username = "",
@@ -28,9 +25,7 @@ namespace MVC.Controllers
             });
         }
 
-        // ======================
         // LOGIN - POST
-        // ======================
         [HttpPost]
         public async Task<IActionResult> Login(UsuarioLoginDto dto)
         {
@@ -55,27 +50,19 @@ namespace MVC.Controllers
                 ModelState.AddModelError("", "Usuario o contraseña incorrectos.");
                 return View(dto);
             }
-
-            // ✅ Guardamos sesión correctamente
             HttpContext.Session.SetString("UserId", user.Id.ToString());
             HttpContext.Session.SetString("Username", user.Username);
 
-            // Redirigimos a la vista de tableros
             return RedirectToAction("Index", "Tableros");
         }
 
-        // ======================
         // REGISTER - GET
-        // ======================
         [HttpGet]
         public IActionResult Register()
         {
             return View(new Usuario());
         }
-
-        // ======================
         // REGISTER - POST
-        // ======================
         [HttpPost]
         public async Task<IActionResult> Register(Usuario usuario)
         {
@@ -93,9 +80,7 @@ namespace MVC.Controllers
             return RedirectToAction("Login");
         }
 
-        // ======================
         // LOGOUT
-        // ======================
         public IActionResult Logout()
         {
             // Limpiamos sesión

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/MVC.csproj": {}
+    "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\MVC\\MVC.csproj": {}
   },
   "projects": {
-    "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/DapperData/DapperData.csproj": {
+    "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\DapperData\\DapperData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/DapperData/DapperData.csproj",
+        "projectUniqueName": "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\DapperData\\DapperData.csproj",
         "projectName": "DapperData",
-        "projectPath": "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/DapperData/DapperData.csproj",
-        "packagesPath": "/home/et12alumno/.nuget/packages/",
-        "outputPath": "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/DapperData/obj/",
+        "projectPath": "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\DapperData\\DapperData.csproj",
+        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\DapperData\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/et12alumno/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -75,21 +80,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/MVC.csproj": {
+    "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\MVC\\MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/MVC.csproj",
+        "projectUniqueName": "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\MVC\\MVC.csproj",
         "projectName": "MVC",
-        "projectPath": "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/MVC.csproj",
-        "packagesPath": "/home/et12alumno/.nuget/packages/",
-        "outputPath": "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/obj/",
+        "projectPath": "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\MVC\\MVC.csproj",
+        "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\MVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/et12alumno/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -101,8 +106,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/DapperData/DapperData.csproj": {
-                "projectPath": "/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/DapperData/DapperData.csproj"
+              "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\DapperData\\DapperData.csproj": {
+                "projectPath": "C:\\Users\\carlo\\OneDrive\\Escritorio\\POO\\Mordekaiser\\TPFinalDesarrolloDeSistemas\\DapperData\\DapperData.csproj"
               }
             }
           }
@@ -111,6 +116,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -135,7 +145,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

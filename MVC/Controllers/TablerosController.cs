@@ -15,9 +15,7 @@ public class TablerosController : AuthenticatedController
         _dao = dao;
     }
 
-    // ======================
     // Listar tableros del usuario
-    // ======================
     public async Task<IActionResult> Index()
     {
         long usuarioId = UsuarioIdActual; // ID del usuario logueado
@@ -25,19 +23,17 @@ public class TablerosController : AuthenticatedController
         return View(tableros);
     }
 
-    // ======================
     // Crear tablero (GET)
-    // ======================
+
     public IActionResult Create()
     {
         return View();
     }
 
-    // ======================
     // Crear tablero (POST)
-    // ======================
+
     [HttpPost]
-    public async Task<IActionResult> Create(Tablero tablero)
+    public async Task<IActionResult> CrearTablero(Tablero tablero)
     {
         if (!ModelState.IsValid)
             return View(tablero);
@@ -63,10 +59,8 @@ public class TablerosController : AuthenticatedController
         return RedirectToAction("Detalle", new { id = idNuevoTablero });
     }
 
-    // ======================
     // Ver detalle de tablero
-    // ======================
-    public async Task<IActionResult> Detalle(long id)
+    public async Task<IActionResult> DetalleTablero(long id)
     {
         // Obtener todas las tareas
         var tareas = await _dao.ObtenerTareas();
@@ -78,7 +72,7 @@ public class TablerosController : AuthenticatedController
         var vm = new TableroDetalleViewModel
         {
             TableroId = id,
-            Nombre = tareasTablero.FirstOrDefault()?.TableroNombre ?? "Nuevo Tablero"
+            Nombre = tareasTablero.FirstOrDefault()?.TableroNombre ?? "Tablero"
         };
 
         // Obtener columnas del tablero (para el formulario de crear tarea)

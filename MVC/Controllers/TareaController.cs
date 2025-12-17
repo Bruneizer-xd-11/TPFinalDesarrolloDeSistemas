@@ -31,7 +31,7 @@ public class TareaController : AuthenticatedController
 
     // Crear tarea (POST)
     [HttpPost]
-    public async Task<IActionResult> Create(CrearTareaViewModel vm)
+    public async Task<IActionResult> CrearTarea(CrearTareaViewModel vm)
     {
         if (!ModelState.IsValid)
         {
@@ -46,7 +46,7 @@ public class TareaController : AuthenticatedController
     }
 
     // Editar tarea (GET)
-    public async Task<IActionResult> Edit(long id)
+    public async Task<IActionResult> EditarTarea(long id)
     {
         var tarea = await _dao.ObtenerTareaPorId(id);
         if (tarea == null) return NotFound();
@@ -64,7 +64,7 @@ public class TareaController : AuthenticatedController
 
     // Editar tarea (POST)
     [HttpPost]
-    public async Task<IActionResult> Edit(EditarTareaViewModel vm)
+    public async Task<IActionResult> EditarTarea(EditarTareaViewModel vm)
     {
         if (!ModelState.IsValid)
         {
@@ -77,7 +77,7 @@ public class TareaController : AuthenticatedController
     }
 
     // Eliminar tarea
-    public async Task<IActionResult> Delete(long id)
+    public async Task<IActionResult> BorrarTarea(long id)
     {
         var tarea = await _dao.ObtenerTareaPorId(id);
         if (tarea == null) return NotFound();

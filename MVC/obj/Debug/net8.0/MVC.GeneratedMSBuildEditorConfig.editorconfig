@@ -9,71 +9,71 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MVC
 build_property.RootNamespace = MVC
-build_property.ProjectDir = /home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/
+build_property.ProjectDir = C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\MVC\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC
+build_property.MSBuildProjectDirectory = C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\MVC
 build_property._RazorSourceGeneratorDebug = 
 
-[/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/Views/Auth/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aC9Mb2dpbi5jc2h0bWw=
+[C:/Users/carlo/OneDrive/Escritorio/POO/Mordekaiser/TPFinalDesarrolloDeSistemas/MVC/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/Views/Auth/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aC9SZWdpc3Rlci5jc2h0bWw=
+[C:/Users/carlo/OneDrive/Escritorio/POO/Mordekaiser/TPFinalDesarrolloDeSistemas/MVC/Views/Auth/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+[C:/Users/carlo/OneDrive/Escritorio/POO/Mordekaiser/TPFinalDesarrolloDeSistemas/MVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+[C:/Users/carlo/OneDrive/Escritorio/POO/Mordekaiser/TPFinalDesarrolloDeSistemas/MVC/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+[C:/Users/carlo/OneDrive/Escritorio/POO/Mordekaiser/TPFinalDesarrolloDeSistemas/MVC/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[C:/Users/carlo/OneDrive/Escritorio/POO/Mordekaiser/TPFinalDesarrolloDeSistemas/MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/Views/Tableros/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGFibGVyb3MvQ3JlYXRlLmNzaHRtbA==
+[C:/Users/carlo/OneDrive/Escritorio/POO/Mordekaiser/TPFinalDesarrolloDeSistemas/MVC/Views/Tableros/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFibGVyb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/Views/Tableros/Detalle.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGFibGVyb3MvRGV0YWxsZS5jc2h0bWw=
+[C:/Users/carlo/OneDrive/Escritorio/POO/Mordekaiser/TPFinalDesarrolloDeSistemas/MVC/Views/Tableros/Detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFibGVyb3NcRGV0YWxsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/Views/Tableros/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGFibGVyb3MvSW5kZXguY3NodG1s
+[C:/Users/carlo/OneDrive/Escritorio/POO/Mordekaiser/TPFinalDesarrolloDeSistemas/MVC/Views/Tableros/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFibGVyb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/Views/Tareas/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGFyZWFzL0NyZWF0ZS5jc2h0bWw=
+[C:/Users/carlo/OneDrive/Escritorio/POO/Mordekaiser/TPFinalDesarrolloDeSistemas/MVC/Views/Tareas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWFzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/Views/Tareas/Editar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGFyZWFzL0VkaXRhci5jc2h0bWw=
+[C:/Users/carlo/OneDrive/Escritorio/POO/Mordekaiser/TPFinalDesarrolloDeSistemas/MVC/Views/Tareas/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWFzXEVkaXRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/Views/Tareas/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGFyZWFzL0luZGV4LmNzaHRtbA==
+[C:/Users/carlo/OneDrive/Escritorio/POO/Mordekaiser/TPFinalDesarrolloDeSistemas/MVC/Views/Tareas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyZWFzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[C:/Users/carlo/OneDrive/Escritorio/POO/Mordekaiser/TPFinalDesarrolloDeSistemas/MVC/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+[C:/Users/carlo/OneDrive/Escritorio/POO/Mordekaiser/TPFinalDesarrolloDeSistemas/MVC/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/et12alumno/Escritorio/Quispe/TPFinalDesarrolloDeSistemas/MVC/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-tgi9xj0eup
+[C:/Users/carlo/OneDrive/Escritorio/POO/Mordekaiser/TPFinalDesarrolloDeSistemas/MVC/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-q0a04yuu0e

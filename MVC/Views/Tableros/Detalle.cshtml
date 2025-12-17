@@ -3,6 +3,11 @@
 @{
     ViewData["Title"] = "Detalle del Tablero";
 }
+<a asp-controller="Tableros"
+   asp-action="Index"
+   class="btn btn-secondary mb-3">
+    ← Volver a tableros
+</a>
 
 <h2>@Model.Nombre</h2>
 
@@ -34,7 +39,6 @@
                         <p>No hay tareas en esta columna</p>
                     }
 
-                    <!-- Formulario para agregar tarea a esta columna -->
                     <form asp-action="CrearTarea" method="post" class="mt-2">
                         <input type="hidden" name="TableroId" value="@Model.TableroId" />
                         <input type="hidden" name="ColumnaId" value="@columna.ColumnaId" />
