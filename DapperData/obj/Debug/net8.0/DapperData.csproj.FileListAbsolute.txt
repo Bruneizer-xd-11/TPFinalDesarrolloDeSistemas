@@ -95,3 +95,16 @@ C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\D
 C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\refint\DapperData.dll
 C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.pdb
 C:\Users\carlo\OneDrive\Escritorio\POO\Mordekaiser\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\ref\DapperData.dll
+C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\bin\Debug\net8.0\DapperData.deps.json
+C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\bin\Debug\net8.0\DapperData.dll
+C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\bin\Debug\net8.0\DapperData.pdb
+C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.csproj.AssemblyReference.cache
+C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.AssemblyInfoInputs.cache
+C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.AssemblyInfo.cs
+C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.csproj.CoreCompileInputs.cache
+C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.sourcelink.json
+C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.dll
+C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\refint\DapperData.dll
+C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\DapperData.pdb
+C:\Users\Lab15-PC01\Documents\GitHub\TPFinalDesarrolloDeSistemas\DapperData\obj\Debug\net8.0\ref\DapperData.dll

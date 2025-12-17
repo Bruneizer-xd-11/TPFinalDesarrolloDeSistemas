@@ -33,7 +33,7 @@ public class TablerosController : AuthenticatedController
     // Crear tablero (POST)
 
     [HttpPost]
-    public async Task<IActionResult> CrearTablero(Tablero tablero)
+    public async Task<IActionResult> Create(Tablero tablero)
     {
         if (!ModelState.IsValid)
             return View(tablero);
@@ -60,7 +60,7 @@ public class TablerosController : AuthenticatedController
     }
 
     // Ver detalle de tablero
-    public async Task<IActionResult> DetalleTablero(long id)
+    public async Task<IActionResult> Detalle(long id)
     {
         // Obtener todas las tareas
         var tareas = await _dao.ObtenerTareas();
