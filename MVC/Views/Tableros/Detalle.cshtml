@@ -1,8 +1,10 @@
+
 @model DapperData.Models.TableroDetalleViewModel
 
 @{
     ViewData["Title"] = "Detalle del Tablero";
 }
+
 <a asp-controller="Tableros"
    asp-action="Index"
    class="btn btn-secondary mb-3">
@@ -12,53 +14,105 @@
 <h2>@Model.Nombre</h2>
 
 <div class="row">
-    @foreach (var columna in Model.Columnas)
-    {
-        <div class="col-md-4">
-            <div class="card mb-3">
-                <div class="card-header bg-primary text-white">
-                    @columna.Nombre
-                </div>
-                <div class="card-body">
-                    @if (columna.Tareas.Any())
-                    {
-                        <ul class="list-group">
-                            @foreach (var tarea in columna.Tareas)
-                            {
-                                <li class="list-group-item">
-                                    <strong>@tarea.Titulo</strong><br />
-                                    @tarea.Descripcion
-                                    <br />
-                                    <small>Prioridad: @tarea.Prioridad</small>
-                                </li>
-                            }
-                        </ul>
-                    }
-                    else
-                    {
-                        <p>No hay tareas en esta columna</p>
-                    }
+@foreach (var columna in Model.Columnas)
+{
+    <div class="col-md-4">
+        <div class="card mb-3">
+            <div class="card-header bg-primary text-white">
+                @columna.Nombre
+            </div>
 
-                    <form asp-action="CrearTarea" method="post" class="mt-2">
-                        <input type="hidden" name="TableroId" value="@Model.TableroId" />
-                        <input type="hidden" name="ColumnaId" value="@columna.ColumnaId" />
-                        <div class="mb-2">
-                            <input type="text" name="Titulo" placeholder="Título de la tarea" class="form-control" required />
-                        </div>
-                        <div class="mb-2">
-                            <textarea name="Descripcion" placeholder="Descripción" class="form-control"></textarea>
-                        </div>
-                        <div class="mb-2">
-                            <select name="Prioridad" class="form-control">
-                                <option value="low">Baja</option>
-                                <option value="high">Alta</option>
-                                <option value="prendida_fuego">¡Urgente!</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-success btn-sm">Agregar tarea</button>
-                    </form>
-                </div>
+            <div class="card-body columna"
+                 data-columna-id="@columna.ColumnaId">
+
+                @if (columna.Tareas.Any())
+                {
+                    <ul class="list-group">
+                    @foreach (var tarea in columna.Tareas)
+                    {
+                        <li class="list-group-item tarea"
+                            draggable="true"
+                            data-tarea-id="@tarea.Id">
+                            <strong>@tarea.Titulo</strong><br />
+                            @tarea.Descripcion<br />
+                            <small>Prioridad: @tarea.Prioridad</small>
+                        </li>
+                    }
+                    </ul>
+                }
+                else
+                {
+                    <p>No hay tareas en esta columna</p>
+                }
+
+                <form asp-action="CrearTarea" method="post" class="mt-2">
+                    <input type="hidden" name="TableroId" value="@Model.TableroId" />
+                    <input type="hidden" name="ColumnaId" value="@columna.ColumnaId" />
+
+                    <div class="mb-2">
+                        <input type="text" name="Titulo" class="form-control"
+                               placeholder="Título de la tarea" required />
+                    </div>
+
+                    <div class="mb-2">
+                        <textarea name="Descripcion"
+                                  class="form-control"
+                                  placeholder="Descripción"></textarea>
+                    </div>
+
+                    <div class="mb-2">
+                        <select name="Prioridad" class="form-control">
+                            <option value="low">Baja</option>
+                            <option value="high">Alta</option>
+                            <option value="prendida_fuego">¡Urgente!</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-sm">
+                        Agregar tarea
+                    </button>
+                </form>
+
             </div>
         </div>
-    }
+    </div>
+}
 </div>
+<script>
+    let tareaIdArrastrada = null;
+
+    document.querySelectorAll('.tarea').forEach(tarea => {
+        tarea.addEventListener('dragstart', e => {
+            tareaIdArrastrada = tarea.dataset.tareaId;
+        });
+    });
+
+    document.querySelectorAll('.columna').forEach(columna => {
+
+        columna.addEventListener('dragover', e => {
+            e.preventDefault(); // permite soltar
+        });
+
+        columna.addEventListener('drop', e => {
+            e.preventDefault();
+
+            const columnaId = columna.dataset.columnaId;
+
+            moverTarea(tareaIdArrastrada, columnaId);
+        });
+    });
+
+    function moverTarea(tareaId, columnaId) {
+        fetch('/Tarea/Mover', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                tareaId: tareaId,
+                columnaId: columnaId
+            })
+        })
+        .then(() => location.reload());
+    }
+</script>

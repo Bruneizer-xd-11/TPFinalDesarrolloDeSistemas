@@ -85,4 +85,16 @@ public class TareaController : AuthenticatedController
         await _dao.EliminarTarea(id);
         return RedirectToAction("Detalle", "Tableros", new { id = tarea.TableroId });
     }
+    [HttpPost]
+public async Task<IActionResult> Mover([FromBody] MoverTareaDto dto)
+{
+    var tarea = await _dao.ObtenerTareaPorId(dto.TareaId);
+    if (tarea == null) return NotFound();
+
+    tarea.ColumnaId = dto.ColumnaId;
+
+    await _dao.ActualizarTarea(tarea);
+
+    return Ok();
+}
 }
